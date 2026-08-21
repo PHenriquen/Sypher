@@ -1,4 +1,5 @@
-import type { CSSProperties, Metadata } from "react";
+import type { CSSProperties } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { divisions, projects } from "../../src/brand";
 import { IdentityMark } from "../../src/components/IdentityMark";
