@@ -17,13 +17,13 @@ export default function BrandPage() {
     <main>
       <SiteHeader />
       <section className="detail-hero shell">
-        <p className="eyebrow">Identity system / v1</p>
+        <p className="eyebrow">Identity system / v2</p>
         <div className="detail-hero-grid">
           <div>
             <h1>Related by rules.<br />Not by repetition.</h1>
-            <p>The parent identity stays monochrome. Divisions own their color and visual behavior. Products stay recognizable on their own.</p>
+            <p>The parent identity stays monochrome and corporate. Divisions own their color, mark and title behavior. Products stay recognizable on their own.</p>
           </div>
-          <IdentityMark src="/brand/sypher.svg" alt="Sypher Cipher Ribbon mark" size="lg" />
+          <IdentityMark src="/brand/sypher.svg" alt="Sypher parent mark" size="lg" />
         </div>
       </section>
 
@@ -31,8 +31,8 @@ export default function BrandPage() {
         <div className="section-heading">
           <p className="section-index">01 / Parent</p>
           <div>
-            <h2>Cipher Ribbon</h2>
-            <p className="section-copy">Two opposing angular ribbons create an abstract S. The central diamond cut behaves like a cipher interruption/key. The mark is monochrome so it can sit above all divisions.</p>
+            <h2>Sypher</h2>
+            <p className="section-copy">The parent mark remains monochrome, geometric and intentionally neutral so the company can expand across software, AI, hardware, research and interactive work without being visually trapped in one field.</p>
           </div>
         </div>
         <div className="palette-row neutral-palette">
@@ -47,13 +47,13 @@ export default function BrandPage() {
         <div className="section-heading">
           <p className="section-index">02 / Division marks</p>
           <div>
-            <h2>Six disciplines, six visual behaviors.</h2>
-            <p className="section-copy">Every mark uses compact geometry and negative space, but each expresses a different domain.</p>
+            <h2>Distinct disciplines, one standard.</h2>
+            <p className="section-copy">Intelligence is blue, Products green, Labs red and Interactive black/yellow. Systems and Engineering keep their existing technical lineages. The marks are related by compact geometry, not by copying one silhouette.</p>
           </div>
         </div>
         <div className="brand-grid">
           {divisions.map((division) => (
-            <article className="brand-card" key={division.slug} style={accentStyle(division.color)}>
+            <article className={`brand-card division-${division.slug}`} key={division.slug} style={accentStyle(division.color)}>
               <IdentityMark src={division.mark} alt={`${division.name} mark`} size="md" />
               <div>
                 <p className="division-brand">Sypher</p>
@@ -69,10 +69,24 @@ export default function BrandPage() {
 
       <section className="section shell">
         <div className="section-heading">
-          <p className="section-index">03 / Project marks</p>
+          <p className="section-index">03 / Personal identity</p>
+          <div>
+            <h2>After Hours stays outside the company divisions.</h2>
+            <p className="section-copy">Purple is reserved for the founder's personal creator space. The identity can be expressive without making streaming, art or creator experiments look like Sypher products.</p>
+          </div>
+        </div>
+        <Link className="after-hours-brand-card" href="/after-hours" style={accentStyle("#7C4DFF")}>
+          <IdentityMark src="/brand/after-hours.svg" alt="After Hours mark" size="md" />
+          <div><span>Personal / non-company</span><strong>After Hours</strong><p>Art · Streaming · Creator experiments</p></div>
+        </Link>
+      </section>
+
+      <section className="section shell">
+        <div className="section-heading">
+          <p className="section-index">04 / Project marks</p>
           <div>
             <h2>Products are endorsed, not swallowed.</h2>
-            <p className="section-copy">A product mark can be more expressive than its division. The division creates lineage; it does not replace product identity.</p>
+            <p className="section-copy">A project mark can be more expressive than its division. The division creates lineage; it does not replace project identity.</p>
           </div>
         </div>
         <div className="project-mark-grid">
@@ -86,19 +100,15 @@ export default function BrandPage() {
       </section>
 
       <section className="section shell rules-grid-section">
-        <p className="section-index">04 / Rules</p>
+        <p className="section-index">05 / Rules</p>
         <div className="rules-grid">
           <article><span>01</span><h3>Silhouette first</h3><p>The mark must work before glow, blur or animation.</p></article>
-          <article><span>02</span><h3>One accent</h3><p>Division color is a signature, not an excuse for permanent gradients.</p></article>
-          <article><span>03</span><h3>No AI clichés</h3><p>No brain, robot face, chat bubble, literal atom or generic sparkle as a core identity.</p></article>
+          <article><span>02</span><h3>Color means lineage</h3><p>Blue, green, red and yellow are signatures with purpose, not decorative gradients.</p></article>
+          <article><span>03</span><h3>Title has a job</h3><p>Sypher stays corporate; Interactive can feel pixel/game-native; Labs stays technical; After Hours stays creator-led.</p></article>
           <article><span>04</span><h3>Product autonomy</h3><p>Illume, Nodi, SincroHub and Réquiem should remain recognizable without the parent logo beside them.</p></article>
         </div>
       </section>
 
-      <section className="manifesto shell compact-manifesto">
-        <p className="section-index">Documentation</p>
-        <blockquote>The repository is the source of truth: vectors, tokens, lineage and endorsement rules live with the code.</blockquote>
-      </section>
       <SiteFooter />
     </main>
   );
