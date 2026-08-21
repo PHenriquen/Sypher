@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="After Hours">
+  <rect width="64" height="64" rx="14" fill="#160F2B"/>
+  <path d="M23 13c10-6 22 2 22 12 0 8-6 12-12 16-5 3-7 5-7 10" fill="none" stroke="#7C4DFF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M41 51c-10 5-21-2-21-12 0-7 5-11 11-15 5-3 8-6 8-11" fill="none" stroke="#B388FF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M15 27 49 13M16 36 50 22M18 45 43 34" stroke="#7C4DFF" stroke-width="4" stroke-linecap="round"/>
+</svg>
