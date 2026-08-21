@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { founderUrl } from "../brand";
+import { founderLinks } from "../brand";
 
 export function SiteFooter() {
   return (
@@ -13,8 +13,11 @@ export function SiteFooter() {
       </div>
       <div className="footer-links">
         <Link href="/brand">Brand system</Link>
-        <a href="https://github.com/PHenriquen" target="_blank" rel="noreferrer">GitHub</a>
-        <a href={founderUrl} target="_blank" rel="noreferrer">Founder portfolio</a>
+        <Link href="/founder">Founder</Link>
+        <Link href="/after-hours">After Hours</Link>
+        <a href={founderLinks.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a href={founderLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href={founderLinks.portfolio} target="_blank" rel="noreferrer">Portfolio</a>
       </div>
     </footer>
   );
