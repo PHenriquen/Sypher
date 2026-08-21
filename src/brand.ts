@@ -36,7 +36,13 @@ export const company = {
     "One parent brand. Distinct disciplines. Products keep their own personality while inheriting a shared standard for engineering, clarity and experimentation.",
 };
 
-export const founderUrl = "https://website-kohl-six-11.vercel.app/";
+export const founderLinks = {
+  portfolio: "https://website-kohl-six-11.vercel.app/",
+  github: "https://github.com/PHenriquen",
+  linkedin: "https://www.linkedin.com/in/pedro-nogueira-138aa2304/",
+};
+
+export const founderUrl = founderLinks.portfolio;
 
 export const divisions: Division[] = [
   {
@@ -173,13 +179,13 @@ export const projects: Project[] = [
   },
   {
     slug: "manopla",
-    name: "Manopla Inteligente",
+    name: "DEXTR",
     divisionSlug: "engineering",
-    category: "Hardware + Software",
-    tagline: "A physical interface built from embedded firmware, mechanics and interaction.",
+    category: "Wearable / Embedded",
+    tagline: "A physical control interface built from embedded firmware, mechanics and interaction.",
     description:
-      "An ESP32-based device project combining embedded firmware, a binary serial protocol, digital mechanics and future physical validation.",
-    status: "Prototype",
+      "Working product name for the current Manopla Inteligente prototype: an ESP32-based wearable-device concept combining embedded firmware, a binary serial protocol, digital mechanics and future physical validation.",
+    status: "Working title · Prototype",
     href: "https://github.com/PHenriquen/Manopla-Inteligente",
     mark: "/brand/projects/manopla.svg",
     accent: "#E99A55",
