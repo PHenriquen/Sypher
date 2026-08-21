@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./brand-system.css";
 import "./polish.css";
+import "./shell-polish.css";
 
 export const metadata: Metadata = {
   title: {
