@@ -1,0 +1,53 @@
+@tailwind components;
+@tailwind utilities;
+
+.finwise-sypher {
+  color: #111216;
+  background: #f7f8fb;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.finwise-sypher * {
+  box-sizing: border-box;
+}
+
+.finwise-sypher a {
+  color: inherit;
+}
+
+.finwise-sypher .template-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(17, 18, 22, .055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 18, 22, .055) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 62% at 50% 38%, #000 52%, transparent 100%);
+}
+
+.finwise-sypher .template-hairline {
+  background: linear-gradient(90deg, transparent, rgba(17, 18, 22, .12), transparent);
+}
+
+.finwise-sypher .template-noise {
+  background-image: radial-gradient(rgba(17,18,22,.08) .6px, transparent .6px);
+  background-size: 10px 10px;
+}
+
+.finwise-sypher .template-interactive-title {
+  font-family: "Courier New", ui-monospace, monospace;
+  letter-spacing: -.04em;
+}
+
+.finwise-sypher .template-labs-title {
+  letter-spacing: .10em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finwise-sypher *,
+  .finwise-sypher *::before,
+  .finwise-sypher *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
