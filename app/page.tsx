@@ -1,7 +1,9 @@
 import type { CSSProperties } from "react";
-import { divisions, projects } from "../src/brand";
-
-const founderUrl = "https://website-kohl-six-11.vercel.app/";
+import Link from "next/link";
+import { company, divisions, projects } from "../src/brand";
+import { IdentityMark } from "../src/components/IdentityMark";
+import { SiteFooter } from "../src/components/SiteFooter";
+import { SiteHeader } from "../src/components/SiteHeader";
 
 function accentStyle(color: string) {
   return { "--accent": color } as CSSProperties;
@@ -10,27 +12,27 @@ function accentStyle(color: string) {
 export default function Home() {
   return (
     <main>
-      <header className="site-header shell">
-        <a className="wordmark" href="#top" aria-label="Sypher home">SYPHER</a>
-        <nav>
-          <a href="#divisions">Divisions</a>
-          <a href="#projects">Projects</a>
-          <a href="#company">Company</a>
-          <a href={founderUrl} target="_blank" rel="noreferrer">Founder</a>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section className="hero shell" id="top">
-        <p className="eyebrow">Technology · Engineering · Research</p>
-        <h1>Build beyond<br />a single category.</h1>
-        <p className="hero-copy">
-          Sypher is being shaped as a long-term technology company for products that move between software,
-          intelligence, physical systems and interactive experiences.
-        </p>
-        <div className="hero-actions">
-          <a className="button primary" href="#projects">Explore the work</a>
-          <a className="button secondary" href="#divisions">View the structure</a>
+        <div className="hero-copy-block">
+          <p className="eyebrow">{company.strapline}</p>
+          <h1>Build systems.<br />Create products.<br /><span>Explore beyond software.</span></h1>
+          <p className="hero-copy">{company.description}</p>
+          <div className="hero-actions">
+            <a className="button primary" href="#projects">Explore the work</a>
+            <Link className="button secondary" href="/brand">Open brand system</Link>
+          </div>
         </div>
+
+        <div className="hero-mark" aria-label="Sypher working mark">
+          <IdentityMark src="/brand/sypher.svg" alt="Sypher Cipher Ribbon working mark" size="lg" />
+          <div className="hero-mark-caption">
+            <span>Working mark / 01</span>
+            <strong>Cipher Ribbon</strong>
+          </div>
+        </div>
+
         <div className="hero-system" aria-label="Sypher division spectrum">
           {divisions.map((division) => (
             <span key={division.slug} style={{ backgroundColor: division.color }} title={division.name} />
@@ -39,92 +41,99 @@ export default function Home() {
       </section>
 
       <section className="statement shell" id="company">
-        <p className="section-index">01 / Company</p>
+        <p className="section-index">01 / Architecture</p>
         <div>
           <h2>One company. Distinct disciplines.</h2>
-          <p>
-            The goal is not to become a generic software house. Sypher is a home for technologies and products
-            with their own identity, while sharing the same standard for engineering, experimentation and long-term thinking.
-          </p>
+          <p>{company.principle}</p>
+          <div className="company-principles">
+            <span>Build proprietary products</span>
+            <span>Connect digital and physical</span>
+            <span>Research before scale</span>
+          </div>
         </div>
       </section>
 
       <section className="section shell" id="divisions">
         <div className="section-heading">
           <p className="section-index">02 / Divisions</p>
-          <h2>A clear lineage for every kind of work.</h2>
+          <div>
+            <h2>A clear lineage for every kind of work.</h2>
+            <p className="section-copy">Each division owns a domain, color and visual behavior. They are related through geometry and discipline rather than one logo repeated six times.</p>
+          </div>
         </div>
+
         <div className="division-grid">
           {divisions.map((division, index) => (
-            <article className="division-card" key={division.slug} style={accentStyle(division.color)}>
+            <Link className="division-card" href={`/divisions/${division.slug}`} key={division.slug} style={accentStyle(division.color)}>
               <div className="division-topline">
                 <span>0{index + 1}</span>
-                <i aria-hidden="true" />
+                <IdentityMark src={division.mark} alt={`${division.name} mark`} size="sm" />
               </div>
               <p className="division-brand">Sypher</p>
               <h3>{division.name}</h3>
               <p className="division-focus">{division.focus}</p>
-              <p className="division-description">{division.description}</p>
+              <p className="division-description">{division.role}</p>
               <div className="division-meta">
-                <span>Visual motif</span>
+                <span>{division.markName}</span>
                 <strong>{division.motif}</strong>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
 
       <section className="section projects-section shell" id="projects">
         <div className="section-heading">
-          <p className="section-index">03 / Projects</p>
-          <h2>The company should be visible through what it builds.</h2>
+          <p className="section-index">03 / Products & work</p>
+          <div>
+            <h2>The company should be visible through what it builds.</h2>
+            <p className="section-copy">Products keep their own names and marks. Sypher acts as the lineage and endorsement behind them.</p>
+          </div>
         </div>
+
         <div className="project-list">
           {projects.map((project) => {
-            const division = divisions.find((item) => item.name === project.division);
+            const division = divisions.find((item) => item.slug === project.divisionSlug);
             return (
-              <a
-                className="project-row"
-                href={project.href}
-                key={project.name}
-                target="_blank"
-                rel="noreferrer"
-                style={accentStyle(division?.color ?? "#ffffff")}
-              >
+              <Link className="project-row" href={`/projects/${project.slug}`} key={project.slug} style={accentStyle(project.accent)}>
                 <div className="project-identity">
-                  <span className="project-dot" />
+                  <IdentityMark src={project.mark} alt={`${project.name} mark`} size="sm" />
                   <div>
-                    <p>{project.division}</p>
+                    <p>{division?.name}</p>
                     <h3>{project.name}</h3>
                   </div>
                 </div>
                 <p className="project-category">{project.category}</p>
-                <p className="project-description">{project.description}</p>
+                <p className="project-description">{project.tagline}</p>
                 <span className="project-status">{project.status}</span>
-                <span className="project-arrow">↗</span>
-              </a>
+                <span className="project-arrow">→</span>
+              </Link>
             );
           })}
         </div>
       </section>
 
-      <section className="manifesto shell">
-        <p className="section-index">04 / Direction</p>
-        <blockquote>
-          Start with software. Earn the right to expand. Keep the company broad enough for the things we do not know how to build yet.
-        </blockquote>
+      <section className="split-feature shell">
+        <div className="split-panel labs-panel" style={accentStyle("#8C6BFF")}>
+          <p className="section-index">04 / Labs</p>
+          <h2>Ideas do not need to pretend they are products.</h2>
+          <p>Labs gives experiments, prototypes and technical studies a place to exist before they earn a permanent home.</p>
+          <Link href="/divisions/labs">Enter Labs →</Link>
+        </div>
+        <div className="split-panel personal-panel">
+          <p className="section-index">05 / Founder</p>
+          <h2>Company work and personal work can coexist without being confused.</h2>
+          <p>Art, streaming and creator experiments live in After Hours: clearly personal, clearly outside the company divisions.</p>
+          <Link href="/after-hours">Open After Hours →</Link>
+        </div>
       </section>
 
-      <footer className="footer shell">
-        <div>
-          <p className="wordmark footer-wordmark">SYPHER</p>
-          <p>Technology company in formation.</p>
-        </div>
-        <div className="footer-links">
-          <a href="https://github.com/PHenriquen" target="_blank" rel="noreferrer">GitHub</a>
-          <a href={founderUrl} target="_blank" rel="noreferrer">Founder portfolio</a>
-        </div>
-      </footer>
+      <section className="manifesto shell">
+        <p className="section-index">06 / Direction</p>
+        <blockquote>Start with software. Earn the right to expand. Keep the architecture broad enough for the things we do not know how to build yet.</blockquote>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }
