@@ -1,10 +1,10 @@
 # Sypher
 
-Official website and brand hub for **Sypher**, a technology company in formation.
+Official website and brand hub for the **working Sypher parent identity**.
 
-The site is designed to grow with the company: one parent brand, clear divisions and individual products with their own identities.
+The project is being built as a durable company architecture: one parent brand, clear divisions and individual products that keep their own identities. The division system is intentionally designed so it can survive a future parent-name change if legal/market clearance requires one.
 
-## Current brand structure
+## Brand architecture
 
 - **Sypher Labs** — research, prototypes and experimental R&D
 - **Sypher Intelligence** — AI and intelligent automation
@@ -13,15 +13,27 @@ The site is designed to grow with the company: one parent brand, clear divisions
 - **Sypher Engineering** — hardware, IoT and physical computing
 - **Sypher Interactive** — games and digital experiences
 
-See [`docs/BRAND_ARCHITECTURE.md`](docs/BRAND_ARCHITECTURE.md) for the provisional identity system.
+`Sypher Group` is reserved for a future real group/holding structure and is not an active division.
 
-## Current projects
+## Current lineage
 
-- Illume — AI Assistant
-- Nodi — SaaS
-- SincroHub — Industrial Platform
-- Manopla Inteligente — Hardware + Software
-- Réquiem — Game
+- Illume → Intelligence
+- Nodi → Products
+- SincroHub → Systems
+- Manopla Inteligente → Engineering
+- Réquiem → Interactive
+- Uncommitted experiments → Labs
+
+## Identity system
+
+The repository includes working SVG marks, color tokens and usage rules:
+
+- [`docs/BRAND_SYSTEM.md`](docs/BRAND_SYSTEM.md)
+- [`docs/ENDORSEMENT.md`](docs/ENDORSEMENT.md)
+- [`brand/tokens.json`](brand/tokens.json)
+- [`public/brand`](public/brand)
+
+The vectors are effect-free core marks; glow and motion belong to presentation layers. Illume's approved reactor/core art remains the intended master identity and the SVG here is a web companion reconstruction.
 
 ## Stack
 
@@ -29,8 +41,6 @@ See [`docs/BRAND_ARCHITECTURE.md`](docs/BRAND_ARCHITECTURE.md) for the provision
 - React
 - TypeScript
 - plain CSS
-
-The visual foundation is intentionally framework-light so the site can evolve without inheriting a large design-system dependency before Sypher's identity is finalized.
 
 ## Run locally
 
@@ -48,6 +58,6 @@ npm run build
 
 ## Deployment
 
-The intended production workflow is GitHub → Vercel. Once the repository is imported into Vercel, pushes to `main` can publish production updates and pull requests can receive preview deployments.
+Production workflow: **GitHub → Vercel**. Keep Vercel on the Next.js preset and leave Output Directory on its framework default.
 
-> Status: first website and brand-architecture foundation.
+> Status: brand system v1 is being developed on a review branch before it becomes the live identity.
