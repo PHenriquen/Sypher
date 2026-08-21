@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { IdentityMark } from "../../src/components/IdentityMark";
 import { SiteFooter } from "../../src/components/SiteFooter";
 import { SiteHeader } from "../../src/components/SiteHeader";
 
@@ -41,8 +42,13 @@ export default function AfterHoursPage() {
     <main className="after-hours-page">
       <SiteHeader />
       <section className="detail-hero shell after-hours-hero">
-        <p className="eyebrow">Personal / non-company</p>
-        <h1>After Hours.</h1>
+        <div className="after-hours-lockup">
+          <IdentityMark src="/brand/after-hours.svg" alt="After Hours mark" size="md" />
+          <div>
+            <p className="eyebrow">Personal / non-company</p>
+            <h1 className="after-hours-title">After Hours</h1>
+          </div>
+        </div>
         <p>A deliberate boundary for the things done because they are fun, expressive or worth trying — not because they belong in a corporate division.</p>
       </section>
 
