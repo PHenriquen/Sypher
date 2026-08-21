@@ -25,11 +25,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-mark" aria-label="Sypher working mark">
-          <IdentityMark src="/brand/sypher.svg" alt="Sypher Cipher Ribbon working mark" size="lg" />
+        <div className="hero-mark" aria-label="Sypher parent mark">
+          <IdentityMark src="/brand/sypher.svg" alt="Sypher parent mark" size="lg" />
           <div className="hero-mark-caption">
-            <span>Working mark / 01</span>
-            <strong>Cipher Ribbon</strong>
+            <span>Parent identity</span>
+            <strong>Sypher</strong>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export default function Home() {
 
         <div className="division-grid">
           {divisions.map((division, index) => (
-            <Link className="division-card" href={`/divisions/${division.slug}`} key={division.slug} style={accentStyle(division.color)}>
+            <Link className={`division-card division-${division.slug}`} href={`/divisions/${division.slug}`} key={division.slug} style={accentStyle(division.color)}>
               <div className="division-topline">
                 <span>0{index + 1}</span>
                 <IdentityMark src={division.mark} alt={`${division.name} mark`} size="sm" />
@@ -114,14 +114,16 @@ export default function Home() {
       </section>
 
       <section className="split-feature shell">
-        <div className="split-panel labs-panel" style={accentStyle("#8C6BFF")}>
+        <div className="split-panel labs-panel" style={accentStyle("#E53935")}>
           <p className="section-index">04 / Labs</p>
+          <IdentityMark src="/brand/divisions/labs.svg" alt="Sypher Labs mark" size="sm" />
           <h2>Ideas do not need to pretend they are products.</h2>
           <p>Labs gives experiments, prototypes and technical studies a place to exist before they earn a permanent home.</p>
           <Link href="/divisions/labs">Enter Labs →</Link>
         </div>
-        <div className="split-panel personal-panel">
+        <div className="split-panel personal-panel after-hours-panel" style={accentStyle("#7C4DFF")}>
           <p className="section-index">05 / Founder</p>
+          <IdentityMark src="/brand/after-hours.svg" alt="After Hours mark" size="sm" />
           <h2>Company work and personal work can coexist without being confused.</h2>
           <p>Art, streaming and creator experiments live in After Hours: clearly personal, clearly outside the company divisions.</p>
           <Link href="/after-hours">Open After Hours →</Link>
