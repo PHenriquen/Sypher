@@ -6,9 +6,34 @@ import { SiteHeader } from "../../src/components/SiteHeader";
 export const metadata: Metadata = { title: "After Hours" };
 
 const personalAreas = [
-  { index: "01", name: "Art", description: "Drawings, character studies, visual experiments and personal creative work." },
-  { index: "02", name: "Streaming", description: "Gameplay, live content and a possible creator identity if streaming grows into something bigger." },
-  { index: "03", name: "Creator experiments", description: "YouTube, TikTok or dark-channel experiments that are personal media projects rather than Sypher products." },
+  {
+    index: "01",
+    name: "Art",
+    description: "Drawings, character studies, visual experiments and personal creative work.",
+    href: null,
+    cta: "Gallery in development",
+  },
+  {
+    index: "02",
+    name: "Twitch / Noguerss",
+    description: "The live side of Noguerss: gameplay, streams and a more spontaneous gaming identity.",
+    href: "https://www.twitch.tv/noguerss",
+    cta: "Open Twitch ↗",
+  },
+  {
+    index: "03",
+    name: "YouTube / Noguerss",
+    description: "An independent creator channel for more edited or editorial content. It can overlap with games without being limited to Twitch highlights or gameplay uploads.",
+    href: "https://youtube.com/@noguerss",
+    cta: "Open YouTube ↗",
+  },
+  {
+    index: "04",
+    name: "Creator experiments",
+    description: "Future formats, TikTok or faceless/editorial experiments that remain personal media projects rather than Sypher products.",
+    href: null,
+    cta: "Experimental",
+  },
 ];
 
 export default function AfterHoursPage() {
@@ -28,7 +53,11 @@ export default function AfterHoursPage() {
               <span>{area.index}</span>
               <h2>{area.name}</h2>
               <p>{area.description}</p>
-              <small>Links can be connected when the public identity for this area is chosen.</small>
+              {area.href ? (
+                <a href={area.href} target="_blank" rel="noreferrer">{area.cta}</a>
+              ) : (
+                <small>{area.cta}</small>
+              )}
             </article>
           ))}
         </div>
