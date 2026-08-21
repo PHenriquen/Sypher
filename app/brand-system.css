@@ -1,0 +1,195 @@
+/* Finalized Sypher identity presentation layer.
+   Keeps the parent brand corporate while giving each lineage a distinct visual behavior. */
+
+.brand-lockup span,
+.footer-brand .brand-lockup span {
+  font-family: "Segoe UI Variable Display", "Aptos Display", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 650;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+}
+
+.division-card h3,
+.brand-card h3,
+.division-title {
+  text-transform: uppercase;
+}
+
+/* Intelligence — blue, luminous, controlled. Title intentionally shares Sypher's corporate DNA. */
+.division-card.division-intelligence {
+  background:
+    radial-gradient(circle at 75% 14%, rgba(0, 214, 255, .14), transparent 34%),
+    linear-gradient(160deg, #07152b 0%, #081a35 58%, #07111f 100%);
+  border-color: rgba(0, 214, 255, .20);
+}
+.division-intelligence h3,
+.division-page.division-intelligence .division-title,
+.brand-card.division-intelligence h3 {
+  font-family: "Segoe UI Variable Display", "Aptos Display", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 720;
+  letter-spacing: .08em;
+}
+
+/* Products — clear product/UI green, simple and readable. */
+.division-card.division-products {
+  background:
+    linear-gradient(rgba(0, 200, 150, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 150, .035) 1px, transparent 1px),
+    linear-gradient(160deg, #06301f 0%, #05261a 70%, #041b13 100%);
+  background-size: 24px 24px, 24px 24px, auto;
+  border-color: rgba(0, 200, 150, .22);
+}
+.division-products h3,
+.division-page.division-products .division-title,
+.brand-card.division-products h3 {
+  font-family: "Segoe UI Variable Display", "Aptos", Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: .045em;
+}
+
+/* Labs — clean research surface, red as the signature, flat rather than 3D. */
+.division-card.division-labs,
+.brand-card.division-labs {
+  color: #1b1c20;
+  background:
+    linear-gradient(rgba(229,57,53,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229,57,53,.045) 1px, transparent 1px),
+    linear-gradient(160deg, #fffafa 0%, #fff3f2 100%);
+  background-size: 22px 22px, 22px 22px, auto;
+  border-color: rgba(229,57,53,.25);
+}
+.division-card.division-labs .division-topline,
+.division-card.division-labs .division-description,
+.division-card.division-labs .division-meta strong,
+.brand-card.division-labs p:not(.division-brand),
+.brand-card.division-labs code { color: #6f6060; }
+.division-card.division-labs .division-focus { color: #3b3131; }
+.division-card.division-labs .division-meta { border-color: rgba(25,20,20,.10); }
+.division-labs h3,
+.division-page.division-labs .division-title,
+.brand-card.division-labs h3 {
+  font-family: "Segoe UI Variable Display", "Aptos Display", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 790;
+  letter-spacing: .16em;
+}
+
+/* Interactive — clean white surface with black/yellow input language and a pixel-inspired title. */
+.division-card.division-interactive,
+.brand-card.division-interactive {
+  color: #111;
+  background:
+    linear-gradient(rgba(17,17,17,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,.035) 1px, transparent 1px),
+    #f7f7f4;
+  background-size: 20px 20px;
+  border-color: rgba(17,17,17,.12);
+}
+.division-card.division-interactive .division-topline,
+.division-card.division-interactive .division-description,
+.division-card.division-interactive .division-meta strong,
+.brand-card.division-interactive p:not(.division-brand),
+.brand-card.division-interactive code { color: #676767; }
+.division-card.division-interactive .division-focus { color: #2b2b2b; }
+.division-card.division-interactive .division-meta { border-color: rgba(17,17,17,.10); }
+.division-interactive h3,
+.division-page.division-interactive .division-title,
+.brand-card.division-interactive h3 {
+  font-family: "Courier New", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 900;
+  letter-spacing: .035em;
+  text-shadow: 2px 2px 0 rgba(255, 210, 0, .34);
+}
+
+/* Systems + Engineering remain part of the company architecture; their existing identities are preserved. */
+.division-systems h3,
+.division-engineering h3,
+.division-page.division-systems .division-title,
+.division-page.division-engineering .division-title {
+  font-family: "Segoe UI Variable Display", "Aptos", Arial, sans-serif;
+  font-weight: 760;
+  letter-spacing: .08em;
+}
+
+/* Division detail wordmarks. */
+.division-detail-hero .division-title {
+  margin: 18px 0 16px;
+  font-size: clamp(54px, 7vw, 98px);
+  line-height: .9;
+}
+.division-detail-hero .division-role {
+  color: var(--text) !important;
+  font-size: clamp(20px, 2.2vw, 30px) !important;
+  line-height: 1.3 !important;
+  max-width: 720px !important;
+  margin: 0 0 20px;
+}
+.division-page.division-labs .division-detail-hero,
+.division-page.division-interactive .division-detail-hero {
+  margin-top: 26px;
+  margin-bottom: 26px;
+  padding-left: clamp(28px, 4vw, 56px);
+  padding-right: clamp(28px, 4vw, 56px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 28px;
+}
+.division-page.division-labs .division-detail-hero {
+  background: linear-gradient(145deg, #fffafa, #fff1f0);
+  color: #17181b;
+  border-color: rgba(229,57,53,.22);
+}
+.division-page.division-interactive .division-detail-hero {
+  background: #f7f7f4;
+  color: #111;
+  border-color: rgba(17,17,17,.10);
+}
+.division-page.division-labs .division-detail-hero p,
+.division-page.division-interactive .division-detail-hero p { color: #5e6168 !important; }
+.division-page.division-labs .division-detail-hero .division-role,
+.division-page.division-interactive .division-detail-hero .division-role { color: #17181b !important; }
+.division-page.division-labs .detail-kicker span,
+.division-page.division-interactive .detail-kicker span { color: #7d8086; }
+
+/* The Labs feature inherits the new red identity without turning into a dark red slab. */
+.labs-panel {
+  --accent: #E53935;
+  background: linear-gradient(145deg, rgba(229,57,53,.075), rgba(229,57,53,.015));
+}
+.after-hours-panel {
+  background: radial-gradient(circle at 82% 20%, rgba(124,77,255,.16), transparent 40%);
+}
+
+/* After Hours is personal, purple, and visually separate from company divisions. */
+.after-hours-page {
+  --accent: #7C4DFF;
+  background:
+    radial-gradient(circle at 78% 16%, rgba(124,77,255,.18), transparent 34rem),
+    linear-gradient(180deg, #160f2b 0%, #0c0b13 70%);
+}
+.after-hours-lockup {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.after-hours-title {
+  margin: 8px 0 0 !important;
+  font-family: "Arial Narrow", "Segoe UI", sans-serif;
+  font-style: italic;
+  font-weight: 800 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase;
+  color: #b388ff;
+}
+.after-hours-page .personal-grid article {
+  background: linear-gradient(160deg, rgba(124,77,255,.09), rgba(255,255,255,.015));
+  border-color: rgba(179,136,255,.18);
+}
+
+/* Brand-system cards use the same title language as their live division pages. */
+.brand-card.division-labs .division-brand { color: #E53935; }
+.brand-card.division-interactive .division-brand { color: #9d8100; }
+
+@media (max-width: 760px) {
+  .after-hours-lockup { align-items: flex-start; gap: 16px; }
+  .after-hours-lockup .identity-mark { width: 64px; height: 64px; }
+  .division-detail-hero .division-title { font-size: clamp(44px, 15vw, 70px); }
+}
