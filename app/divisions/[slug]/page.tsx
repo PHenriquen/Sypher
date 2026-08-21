@@ -25,14 +25,15 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
   const style = { "--accent": division.color } as CSSProperties;
 
   return (
-    <main style={style}>
+    <main className={`division-page division-${division.slug}`} style={style}>
       <SiteHeader />
       <section className="detail-hero shell division-detail-hero">
         <div className="detail-kicker"><span>Sypher</span><strong>{division.name}</strong></div>
         <div className="detail-hero-grid">
           <div>
             <p className="eyebrow">{division.focus}</p>
-            <h1>{division.role}</h1>
+            <h1 className="division-title">{division.name}</h1>
+            <p className="division-role">{division.role}</p>
             <p>{division.description}</p>
           </div>
           <IdentityMark src={division.mark} alt={`${division.name} ${division.markName} mark`} size="lg" />
