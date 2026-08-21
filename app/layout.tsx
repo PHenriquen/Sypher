@@ -6,6 +6,7 @@ import "./brand-system.css";
 import "./polish.css";
 import "./shell-polish.css";
 import "./site-v3.css";
+import "./footer-v3.css";
 
 export const metadata: Metadata = {
   title: {
