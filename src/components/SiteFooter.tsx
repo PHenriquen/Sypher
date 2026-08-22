@@ -11,29 +11,29 @@ export function SiteFooter() {
             <img src="/brand/sypher.svg" alt="" aria-hidden="true" />
             <span>SYPHER</span>
           </div>
-          <p>Technology, engineering and applied research built around proprietary products.</p>
-          <span className="footer-v3-status"><i /> Company in formation</span>
+          <p>Tecnologia, engenharia e pesquisa aplicada construídas em torno de produtos próprios.</p>
+          <span className="footer-v3-status"><i /> Empresa em formação</span>
         </div>
 
         <div className="footer-v3-groups">
           <div>
-            <span className="footer-v3-label">Company</span>
-            <Link href="/brand">Brand system</Link>
-            <Link href="/founder">Founder</Link>
+            <span className="footer-v3-label">Empresa</span>
+            <Link href="/brand">Sistema de marca</Link>
+            <Link href="/founder">Fundador</Link>
             <Link href="/after-hours">After Hours</Link>
           </div>
           <div>
-            <span className="footer-v3-label">Connect</span>
+            <span className="footer-v3-label">Conectar</span>
             <a href={founderLinks.github} target="_blank" rel="noreferrer">GitHub <UiIcon name="arrow-up-right" size={13} /></a>
             <a href={founderLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn <UiIcon name="arrow-up-right" size={13} /></a>
-            <a href={founderLinks.portfolio} target="_blank" rel="noreferrer">Portfolio <UiIcon name="arrow-up-right" size={13} /></a>
+            <a href={founderLinks.portfolio} target="_blank" rel="noreferrer">Portfólio <UiIcon name="arrow-up-right" size={13} /></a>
           </div>
         </div>
       </div>
 
       <div className="footer-v3-bottom">
-        <span>Technology · Engineering · Research</span>
-        <span>Sypher / 2026</span>
+        <span>Tecnologia · Engenharia · Pesquisa</span>
+        <span>Sypher</span>
       </div>
     </footer>
   );
