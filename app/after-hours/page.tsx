@@ -9,29 +9,29 @@ export const metadata: Metadata = { title: "After Hours" };
 const personalAreas = [
   {
     index: "01",
-    name: "Art",
-    description: "Drawings, character studies, visual experiments and personal creative work.",
+    name: "Desenhos",
+    description: "Ilustrações, estudos de personagem, experimentos visuais e trabalho criativo pessoal.",
     href: null,
-    cta: "Gallery in development",
+    cta: "Galeria em desenvolvimento",
   },
   {
     index: "02",
     name: "Twitch / Noguerss",
-    description: "The live side of Noguerss: gameplay, streams and a more spontaneous gaming identity.",
+    description: "O lado ao vivo: gameplay, streams e uma identidade de jogos mais espontânea e pessoal.",
     href: "https://www.twitch.tv/noguerss",
-    cta: "Open Twitch ↗",
+    cta: "Abrir Twitch ↗",
   },
   {
     index: "03",
     name: "YouTube / Noguerss",
-    description: "An independent creator channel for more edited or editorial content. It can overlap with games without being limited to Twitch highlights or gameplay uploads.",
+    description: "Espaço para vídeos mais editados ou autorais. Pode conversar com games sem virar apenas arquivo de live.",
     href: "https://youtube.com/@noguerss",
-    cta: "Open YouTube ↗",
+    cta: "Abrir YouTube ↗",
   },
   {
     index: "04",
-    name: "Creator experiments",
-    description: "Future formats, TikTok or faceless/editorial experiments that remain personal media projects rather than Sypher products.",
+    name: "Experimentos de creator",
+    description: "TikTok, formatos dark, ideias sem rosto e testes de conteúdo que continuam pessoais, não produtos da Sypher.",
     href: null,
     cta: "Experimental",
   },
@@ -39,41 +39,48 @@ const personalAreas = [
 
 export default function AfterHoursPage() {
   return (
-    <main className="after-hours-page">
+    <main className="after-hours-world">
       <SiteHeader />
-      <section className="detail-hero shell after-hours-hero">
-        <div className="after-hours-lockup">
-          <IdentityMark src="/brand/after-hours.svg" alt="After Hours mark" size="md" />
+
+      <section className="world-hero">
+        <div className="world-shell world-hero-grid">
           <div>
-            <p className="eyebrow">Personal / non-company</p>
-            <h1 className="after-hours-title">After Hours</h1>
+            <div className="world-kicker"><i /><span>Pessoal / fora da empresa</span></div>
+            <h1 className="world-title">After<br />Hours</h1>
+            <p className="world-role">O espaço para coisas feitas porque são divertidas, expressivas ou simplesmente valem a tentativa.</p>
+            <p className="world-description">Aqui entram arte, streaming, jogos e experiências de conteúdo sem transformar hobby em divisão corporativa.</p>
+          </div>
+          <div className="world-art">
+            <div className="world-mark-stage"><IdentityMark src="/brand/after-hours.svg" alt="Logo After Hours" size="lg" /></div>
+            <div className="world-art-label"><span>Creator / noite / experimentação</span><strong>After Hours</strong></div>
           </div>
         </div>
-        <p>A deliberate boundary for the things done because they are fun, expressive or worth trying — not because they belong in a corporate division.</p>
       </section>
 
-      <section className="section shell">
-        <div className="personal-grid">
-          {personalAreas.map((area) => (
-            <article key={area.name}>
-              <span>{area.index}</span>
-              <h2>{area.name}</h2>
-              <p>{area.description}</p>
-              {area.href ? (
-                <a href={area.href} target="_blank" rel="noreferrer">{area.cta}</a>
-              ) : (
-                <small>{area.cta}</small>
-              )}
-            </article>
-          ))}
+      <section className="world-section">
+        <div className="world-shell">
+          <div className="world-section-head"><span className="world-index">01 / Espaços pessoais</span><div><h2>Sem precisar parecer trabalho.</h2><p>O objetivo é organizar e mostrar hobbies sem confundir o que é produção pessoal com o que pertence à empresa.</p></div></div>
+          <div className="after-hours-grid">
+            {personalAreas.map((area) => (
+              <article className="after-hours-card" key={area.name}>
+                <span>{area.index}</span>
+                <h2>{area.name}</h2>
+                <p>{area.description}</p>
+                {area.href ? <a href={area.href} target="_blank" rel="noreferrer">{area.cta}</a> : <small>{area.cta}</small>}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="personal-disclaimer shell">
-        <strong>This is not a Sypher division.</strong>
-        <p>After Hours is attached to the founder profile only. Content here should never be described as company R&D, client work or a Sypher product unless it actually graduates into one.</p>
-        <Link href="/founder">← Back to Founder</Link>
+      <section className="world-section">
+        <div className="world-shell">
+          <div className="world-section-head"><span className="world-index">02 / Limite claro</span><div><h2>After Hours não é uma divisão da Sypher.</h2><p>Ele fica ligado ao perfil do fundador. Um hobby só vira projeto da empresa quando existe decisão explícita de promover aquela ideia para uma divisão.</p></div></div>
+          <div className="world-empty">Arte, streaming e creator experiments continuam pessoais. Essa separação deixa o site mais rico sem diluir a seriedade da marca principal.</div>
+        </div>
       </section>
+
+      <div className="world-shell world-next"><Link href="/founder">← Voltar ao Fundador</Link><Link href="/">Sypher →</Link></div>
       <SiteFooter />
     </main>
   );
