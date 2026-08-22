@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function SiteHeader() {
   return (
@@ -16,6 +17,7 @@ export function SiteHeader() {
           <Link href="/after-hours">After Hours</Link>
         </nav>
         <span className="header-status"><i /> Em formação</span>
+        <ThemeToggle compact />
       </div>
     </header>
   );
