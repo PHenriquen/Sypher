@@ -6,7 +6,7 @@ import { IdentityMark } from "../../src/components/IdentityMark";
 import { SiteFooter } from "../../src/components/SiteFooter";
 import { SiteHeader } from "../../src/components/SiteHeader";
 
-export const metadata: Metadata = { title: "Brand system" };
+export const metadata: Metadata = { title: "Sistema de marca" };
 
 function accentStyle(color: string) {
   return { "--accent": color } as CSSProperties;
@@ -17,23 +17,20 @@ export default function BrandPage() {
     <main>
       <SiteHeader />
       <section className="detail-hero shell">
-        <p className="eyebrow">Identity system / v2</p>
+        <p className="eyebrow">Sistema de identidade / v3</p>
         <div className="detail-hero-grid">
           <div>
-            <h1>Related by rules.<br />Not by repetition.</h1>
-            <p>The parent identity stays monochrome and corporate. Divisions own their color, mark and title behavior. Products stay recognizable on their own.</p>
+            <h1>Relacionadas por regras.<br />Não por repetição.</h1>
+            <p>A identidade principal permanece monocromática e corporativa. Cada divisão possui cor, símbolo, tipografia e comportamento visual próprios. Os produtos continuam reconhecíveis sozinhos.</p>
           </div>
-          <IdentityMark src="/brand/sypher.svg" alt="Sypher parent mark" size="lg" />
+          <IdentityMark src="/brand/sypher.svg" alt="Símbolo principal da Sypher" size="lg" />
         </div>
       </section>
 
       <section className="section shell">
         <div className="section-heading">
-          <p className="section-index">01 / Parent</p>
-          <div>
-            <h2>Sypher</h2>
-            <p className="section-copy">The parent mark remains monochrome, geometric and intentionally neutral so the company can expand across software, AI, hardware, research and interactive work without being visually trapped in one field.</p>
-          </div>
+          <p className="section-index">01 / Marca-mãe</p>
+          <div><h2>Sypher</h2><p className="section-copy">A marca principal continua geométrica, neutra e corporativa para que a empresa possa crescer por software, IA, hardware, pesquisa e experiências interativas sem ficar visualmente presa a uma área.</p></div>
         </div>
         <div className="palette-row neutral-palette">
           <div><i style={{ background: "#07090D" }} /><span>Obsidian</span><code>#07090D</code></div>
@@ -45,23 +42,14 @@ export default function BrandPage() {
 
       <section className="section shell">
         <div className="section-heading">
-          <p className="section-index">02 / Division marks</p>
-          <div>
-            <h2>Distinct disciplines, one standard.</h2>
-            <p className="section-copy">Intelligence is blue, Products green, Labs red and Interactive black/yellow. Systems and Engineering keep their existing technical lineages. The marks are related by compact geometry, not by copying one silhouette.</p>
-          </div>
+          <p className="section-index">02 / Divisões</p>
+          <div><h2>Disciplinas distintas. Um padrão compartilhado.</h2><p className="section-copy">Intelligence é azul, Products verde, Labs vermelha e Interactive preto/amarelo. Systems e Engineering mantêm suas próprias linguagens técnicas. A família é construída por geometria compacta e rigor visual, não pela cópia de uma mesma silhueta.</p></div>
         </div>
         <div className="brand-grid">
           {divisions.map((division) => (
             <article className={`brand-card division-${division.slug}`} key={division.slug} style={accentStyle(division.color)}>
-              <IdentityMark src={division.mark} alt={`${division.name} mark`} size="md" />
-              <div>
-                <p className="division-brand">Sypher</p>
-                <h3>{division.name}</h3>
-                <strong>{division.markName}</strong>
-                <p>{division.tone}</p>
-                <code>{division.color}</code>
-              </div>
+              <IdentityMark src={division.mark} alt={`Símbolo da Sypher ${division.name}`} size="md" />
+              <div><p className="division-brand">Sypher</p><h3>{division.name}</h3><strong>{division.markName}</strong><p>{division.tone}</p><code>{division.color}</code></div>
             </article>
           ))}
         </div>
@@ -69,30 +57,24 @@ export default function BrandPage() {
 
       <section className="section shell">
         <div className="section-heading">
-          <p className="section-index">03 / Personal identity</p>
-          <div>
-            <h2>After Hours stays outside the company divisions.</h2>
-            <p className="section-copy">Purple is reserved for the founder's personal creator space. The identity can be expressive without making streaming, art or creator experiments look like Sypher products.</p>
-          </div>
+          <p className="section-index">03 / Identidade pessoal</p>
+          <div><h2>After Hours fica fora das divisões da empresa.</h2><p className="section-copy">Roxo é reservado ao espaço pessoal do fundador. A identidade pode ser mais expressiva sem fazer streaming, arte ou experimentos de conteúdo parecerem produtos da Sypher.</p></div>
         </div>
         <Link className="after-hours-brand-card" href="/after-hours" style={accentStyle("#7C4DFF")}>
-          <IdentityMark src="/brand/after-hours.svg" alt="After Hours mark" size="md" />
-          <div><span>Personal / non-company</span><strong>After Hours</strong><p>Art · Streaming · Creator experiments</p></div>
+          <IdentityMark src="/brand/after-hours.svg" alt="Símbolo After Hours" size="md" />
+          <div><span>Pessoal / fora da empresa</span><strong>After Hours</strong><p>Arte · Streaming · Experimentos de creator</p></div>
         </Link>
       </section>
 
       <section className="section shell">
         <div className="section-heading">
-          <p className="section-index">04 / Project marks</p>
-          <div>
-            <h2>Products are endorsed, not swallowed.</h2>
-            <p className="section-copy">A project mark can be more expressive than its division. The division creates lineage; it does not replace project identity.</p>
-          </div>
+          <p className="section-index">04 / Projetos</p>
+          <div><h2>Produtos são endossados, não engolidos.</h2><p className="section-copy">Um projeto pode ser mais expressivo que sua divisão. A divisão cria linhagem; ela não substitui a identidade do produto.</p></div>
         </div>
         <div className="project-mark-grid">
           {projects.map((project) => (
             <Link href={`/projects/${project.slug}`} className="project-mark-card" key={project.slug} style={accentStyle(project.accent)}>
-              <IdentityMark src={project.mark} alt={`${project.name} mark`} size="md" />
+              <IdentityMark src={project.mark} alt={`Logo ${project.name}`} size="md" />
               <div><strong>{project.name}</strong><span>{project.category}</span></div>
             </Link>
           ))}
@@ -100,12 +82,12 @@ export default function BrandPage() {
       </section>
 
       <section className="section shell rules-grid-section">
-        <p className="section-index">05 / Rules</p>
+        <p className="section-index">05 / Regras</p>
         <div className="rules-grid">
-          <article><span>01</span><h3>Silhouette first</h3><p>The mark must work before glow, blur or animation.</p></article>
-          <article><span>02</span><h3>Color means lineage</h3><p>Blue, green, red and yellow are signatures with purpose, not decorative gradients.</p></article>
-          <article><span>03</span><h3>Title has a job</h3><p>Sypher stays corporate; Interactive can feel pixel/game-native; Labs stays technical; After Hours stays creator-led.</p></article>
-          <article><span>04</span><h3>Product autonomy</h3><p>Illume, Nodi, SincroHub and Réquiem should remain recognizable without the parent logo beside them.</p></article>
+          <article><span>01</span><h3>Silhueta primeiro</h3><p>O símbolo precisa funcionar antes de glow, blur ou animação.</p></article>
+          <article><span>02</span><h3>Cor significa linhagem</h3><p>Azul, verde, vermelho, laranja e amarelo carregam função; não são gradientes decorativos aleatórios.</p></article>
+          <article><span>03</span><h3>Tipografia tem função</h3><p>Sypher permanece corporativa; Interactive pode ser pixel/game-native; Labs é técnica; After Hours é mais autoral.</p></article>
+          <article><span>04</span><h3>Autonomia de produto</h3><p>Illume, Nodi, SincroHub, DEXTR e Réquiem devem continuar reconhecíveis sem a marca principal ao lado.</p></article>
         </div>
       </section>
 
