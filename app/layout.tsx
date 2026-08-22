@@ -8,19 +8,21 @@ import "./shell-polish.css";
 import "./site-v3.css";
 import "./footer-v3.css";
 import "./template-tailwind.css";
+import "./division-worlds.css";
+import "./home-division-previews.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sypher — Technology, Engineering & Research",
+    default: "Sypher — Tecnologia, Engenharia & Pesquisa",
     template: "%s — Sypher",
   },
   description:
-    "Sypher is a technology company in formation, building software, intelligent systems, hardware and interactive products.",
+    "A Sypher é uma empresa de tecnologia em formação, criando software, sistemas inteligentes, hardware e experiências interativas.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body>
         {children}
         <Analytics />
