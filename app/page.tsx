@@ -1,5 +1,5 @@
-import FinwiseSypherHome from "../src/components/FinwiseSypherHome";
+import SypherHome from "../src/components/SypherHome";
 
 export default function Home() {
-  return <FinwiseSypherHome />;
+  return <SypherHome />;
 }
