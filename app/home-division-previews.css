@@ -1,0 +1,45 @@
+/* Homepage division previews: same brand family, different worlds. */
+.division-preview { --preview-accent: var(--division, #111216); }
+.division-preview-art { background: color-mix(in srgb, var(--preview-accent) 4%, #fff); }
+.division-preview-grid { background-image: linear-gradient(color-mix(in srgb,var(--preview-accent) 8%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--preview-accent) 8%,transparent) 1px,transparent 1px); background-size: 30px 30px; mask-image: radial-gradient(circle at center,black 30%,transparent 82%); }
+.division-preview-mark { transition: transform .3s ease, box-shadow .3s ease; }
+.division-preview:hover .division-preview-mark { transform: translateY(-6px) scale(1.03); }
+
+.division-preview-intelligence { color: #effbff; background: linear-gradient(145deg,#07162a,#081b31) !important; border-color: rgba(0,214,255,.16) !important; }
+.division-preview-intelligence h3 { color: #f1fbff !important; }
+.division-preview-intelligence p { color: #8da5b8 !important; }
+.division-preview-intelligence .division-preview-art { background: radial-gradient(circle at 50% 45%,rgba(0,214,255,.15),transparent 12rem),#08182b; }
+.division-preview-intelligence .division-preview-orbit { box-shadow: 0 0 60px rgba(0,214,255,.10); }
+.division-preview-intelligence .division-preview-mark { background: #07152b !important; box-shadow: 0 30px 80px rgba(0,214,255,.10) !important; }
+
+.division-preview-products { background: linear-gradient(145deg,#f5fff9,#effbf5) !important; }
+.division-preview-products .division-preview-art { background: linear-gradient(135deg,#f8fffb,#e9fff5); }
+.division-preview-products .division-preview-mark { border-radius: 32px 32px 32px 10px !important; box-shadow: 12px 12px 0 rgba(0,200,150,.09) !important; }
+
+.division-preview-labs { background: #fff7f5 !important; }
+.division-preview-labs h3 { letter-spacing: .07em !important; text-transform: uppercase; font-weight: 760 !important; }
+.division-preview-labs .division-preview-art { background-image: linear-gradient(rgba(229,57,53,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(229,57,53,.055) 1px,transparent 1px); background-size: 24px 24px; background-color: #fffaf9; }
+.division-preview-labs .division-preview-orbit { border-style: dashed !important; border-radius: 32% 52% 42% 58% !important; transform: rotate(12deg); }
+.division-preview-labs .division-preview-mark { border-radius: 22px !important; transform: rotate(2deg); }
+
+.division-preview-systems { color: #f3f6ff; background: linear-gradient(145deg,#091326,#0a1730) !important; border-color: rgba(63,115,255,.18) !important; }
+.division-preview-systems h3 { color: #f5f7ff !important; }
+.division-preview-systems p { color: #8e9aba !important; }
+.division-preview-systems .division-preview-art { background-image: linear-gradient(rgba(63,115,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(63,115,255,.055) 1px,transparent 1px); background-size: 22px 22px; background-color: #081326; }
+.division-preview-systems .division-preview-mark { background: #09172e !important; }
+
+.division-preview-engineering { color: #fff8ef; background: linear-gradient(145deg,#1d1611,#241a13) !important; border-color: rgba(233,154,85,.17) !important; }
+.division-preview-engineering h3 { color: #fff8ef !important; }
+.division-preview-engineering p { color: #b9a38f !important; }
+.division-preview-engineering .division-preview-art { background-image: linear-gradient(rgba(233,154,85,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(233,154,85,.045) 1px,transparent 1px); background-size: 20px 20px; background-color: #1a140f; }
+.division-preview-engineering .division-preview-mark { background: #211811 !important; border-radius: 16px !important; box-shadow: 10px 10px 0 rgba(233,154,85,.08) !important; }
+
+.division-preview-interactive { background: #fff !important; border: 2px solid #111 !important; border-radius: 4px !important; box-shadow: 8px 8px 0 #ffd200 !important; }
+.division-preview-interactive h3 { font-family: "Courier New",ui-monospace,monospace; text-transform: uppercase; text-shadow: 3px 3px 0 #ffd200; letter-spacing: -.02em !important; }
+.division-preview-interactive .division-preview-art { background-image: linear-gradient(rgba(0,0,0,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px); background-size: 16px 16px; background-color: #fff; }
+.division-preview-interactive .division-preview-orbit { border: 2px dashed #111 !important; border-radius: 0 !important; transform: rotate(45deg) scale(.72); opacity: .22; }
+.division-preview-interactive .division-preview-mark { border: 3px solid #111 !important; border-radius: 0 !important; background: #fff !important; box-shadow: 10px 10px 0 #ffd200 !important; }
+
+@media (max-width: 760px) {
+  .division-preview-interactive { box-shadow: 5px 5px 0 #ffd200 !important; }
+}
