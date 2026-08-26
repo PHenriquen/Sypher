@@ -1,196 +1,194 @@
 'use client';
 
-import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
 import { company, divisions, projects } from '../brand';
-import { ThemeToggle } from './ThemeToggle';
 
 const reveal = {
   initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-60px' },
-  transition: { duration: 0.56, ease: [0.2, 0.8, 0.2, 1] as const },
+  viewport: { once: true, margin: '-80px' },
+  transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const },
 };
 
-function accent(color: string) {
-  return { '--card-accent': color } as CSSProperties;
+function BrandMark({ className = '' }: { className?: string }) {
+  return <img className={className} src="/brand/sypher.svg" alt="Símbolo da Sypher" />;
 }
 
-function Mark({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
-  return <img src={src} alt={alt} className={className} />;
-}
-
-function Header() {
+function EditorialHeader() {
   return (
-    <header className="sy-home-header">
-      <div className="sy-home-header-inner">
-        <Link href="/" className="sy-home-brand" aria-label="Página inicial da Sypher">
-          <Mark src="/brand/sypher.svg" alt="" />
-          <span><strong>SYPHER</strong><small>Tecnologia · Engenharia · Pesquisa</small></span>
-        </Link>
+    <header className="se-header">
+      <div className="se-header-inner">
+        <Link className="se-wordmark" href="/">SYPHER</Link>
         <nav aria-label="Navegação principal">
-          <a href="#divisoes">Divisões</a>
-          <a href="#projetos">Projetos</a>
-          <Link href="/brand">Marca</Link>
-          <Link href="/founder">Fundador</Link>
+          <a href="#about">Manifesto</a>
+          <a href="#divisions">Divisões</a>
+          <a href="#work">Projetos</a>
+          <Link href="/brand">Identidade</Link>
         </nav>
-        <ThemeToggle />
+        <Link className="se-index-link" href="/founder">Founder ↗</Link>
       </div>
     </header>
   );
 }
 
+function OrbitArtwork() {
+  return (
+    <div className="se-orbit-art" aria-hidden="true">
+      <div className="se-orbit-noise" />
+      <div className="se-orbit-blob blob-a" />
+      <div className="se-orbit-blob blob-b" />
+      <div className="se-orbit-line line-a" />
+      <div className="se-orbit-line line-b" />
+      <span className="se-star star-a">✦</span>
+      <span className="se-star star-b">✦</span>
+      <span className="se-star star-c">✦</span>
+      <BrandMark className="se-orbit-mark" />
+    </div>
+  );
+}
+
 function Hero() {
   return (
-    <section className="sy-hero">
-      <div className="sy-hero-grid" aria-hidden="true" />
-      <div className="sy-hero-glow" aria-hidden="true" />
-      <div className="sy-shell sy-hero-layout">
-        <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }} className="sy-hero-copy">
-          <p className="sy-kicker"><span /> Empresa independente de tecnologia</p>
-          <h1>Tecnologia com<br /><em>visão própria.</em></h1>
-          <p className="sy-hero-lede">{company.description} Software é o ponto de partida; IA, sistemas, hardware, jogos e pesquisa fazem parte do mesmo horizonte.</p>
-          <div className="sy-hero-actions">
-            <a className="sy-btn primary" href="#projetos">Explorar projetos <HiArrowDownRight /></a>
-            <Link className="sy-btn secondary" href="/brand">Sistema de marca</Link>
-          </div>
-        </motion.div>
+    <section className="se-hero">
+      <div className="se-hero-meta se-meta-left">INDEPENDENT TECHNOLOGY COMPANY<br />BRASIL — 2026</div>
+      <div className="se-hero-meta se-meta-right">SOFTWARE / AI / ENGINEERING<br />RESEARCH / INTERACTIVE</div>
 
-        <motion.div initial={{ opacity: 0, scale: .96, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: .75, delay: .08 }} className="sy-hero-symbol">
-          <div className="sy-symbol-orbit orbit-a" />
-          <div className="sy-symbol-orbit orbit-b" />
-          <div className="sy-symbol-core"><Mark src="/brand/sypher.svg" alt="Símbolo da Sypher" /></div>
-          <span className="sy-symbol-label label-a">SOFTWARE</span>
-          <span className="sy-symbol-label label-b">INTELLIGENCE</span>
-          <span className="sy-symbol-label label-c">ENGINEERING</span>
-          <span className="sy-symbol-label label-d">INTERACTIVE</span>
-        </motion.div>
-      </div>
+      <OrbitArtwork />
 
-      <div className="sy-shell sy-brand-strip" aria-label="Identidades da Sypher">
-        {divisions.map((division) => (
-          <Link href={`/divisions/${division.slug}`} key={division.slug} className={`sy-brand-chip chip-${division.slug}`} style={accent(division.color)}>
-            <Mark src={division.mark} alt={`Logo Sypher ${division.name}`} />
-            <span><small>Sypher</small><strong>{division.name}</strong></span>
-          </Link>
-        ))}
+      <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }} className="se-hero-title-wrap">
+        <h1>SYPHER</h1>
+      </motion.div>
+
+      <div className="se-hero-bottom">
+        <p>{company.description}</p>
+        <a href="#about">Explore the system <HiArrowDownRight /></a>
       </div>
+    </section>
+  );
+}
+
+function Manifesto() {
+  return (
+    <section className="se-manifesto" id="about">
+      <div className="se-section-index">01 / MANIFESTO</div>
+      <motion.div {...reveal} className="se-manifesto-grid">
+        <p className="se-eyebrow">BUILDING SYSTEMS WITH A POINT OF VIEW.</p>
+        <h2>
+          Não queremos parecer com o futuro.
+          <span> Queremos ajudar a construí-lo.</span>
+        </h2>
+        <div className="se-manifesto-copy">
+          <p>Software é o ponto de partida. Inteligência artificial, engenharia, experiências interativas e pesquisa fazem parte do mesmo sistema.</p>
+          <p>A Sypher cresce como uma plataforma de ideias: cada divisão pode ter linguagem própria, mas todas compartilham precisão, curiosidade e ambição técnica.</p>
+        </div>
+      </motion.div>
     </section>
   );
 }
 
 function Divisions() {
   return (
-    <section className="sy-section" id="divisoes">
-      <div className="sy-shell">
-        <motion.div {...reveal} className="sy-section-head">
-          <div><p className="sy-kicker"><span /> 01 / Divisões</p><h2>Uma empresa.<br />Seis universos.</h2></div>
-          <p>Cada divisão tem símbolo, cor, linguagem e comportamento próprios. O que une tudo é o padrão de construção da Sypher — não um template repetido seis vezes.</p>
-        </motion.div>
-
-        <div className="sy-division-grid">
-          {divisions.map((division, index) => (
-            <motion.div key={division.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .045 }} className={`sy-division-wrap wrap-${division.slug}`}>
-              <Link href={`/divisions/${division.slug}`} className={`sy-division-card card-${division.slug}`} style={accent(division.color)}>
-                <div className="sy-division-top"><span>0{index + 1}</span><span>{division.focus}</span></div>
-                <div className="sy-division-visual">
-                  <div className="sy-division-mark"><Mark src={division.mark} alt={`Logo ${division.name}`} /></div>
-                  <span className="sy-division-scan" />
-                </div>
-                <div className="sy-division-copy">
-                  <small>SYPHER</small>
-                  <h3>{division.name}</h3>
-                  <p>{division.role}</p>
-                </div>
-                <div className="sy-division-bottom"><span>{division.keywords.join(' · ')}</span><HiArrowUpRight /></div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+    <section className="se-divisions" id="divisions">
+      <div className="se-section-head">
+        <span>02 / DIVISIONS</span>
+        <h2>One company.<br />Multiple disciplines.</h2>
       </div>
-    </section>
-  );
-}
 
-function Projects() {
-  return (
-    <section className="sy-section sy-projects-section" id="projetos">
-      <div className="sy-shell">
-        <motion.div {...reveal} className="sy-section-head">
-          <div><p className="sy-kicker"><span /> 02 / Projetos</p><h2>A identidade precisa<br />virar coisa real.</h2></div>
-          <p>Os projetos mantêm voz e símbolo próprios. A divisão funciona como linhagem técnica; o produto continua reconhecível sozinho.</p>
-        </motion.div>
-        <div className="sy-project-grid">
-          {projects.map((project, index) => {
-            const division = divisions.find((item) => item.slug === project.divisionSlug);
-            return (
-              <motion.div key={project.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .04 }}>
-                <Link href={`/projects/${project.slug}`} className={`sy-project-card project-${project.divisionSlug}`} style={accent(project.accent)}>
-                  <div className="sy-project-header">
-                    <div className="sy-project-mark"><Mark src={project.mark} alt={`Logo ${project.name}`} /></div>
-                    <span>{project.status}</span>
-                  </div>
-                  <div className="sy-project-copy"><small>{division?.name} / {project.category}</small><h3>{project.name}</h3><p>{project.tagline}</p></div>
-                  <div className="sy-project-link"><span>Abrir projeto</span><HiArrowUpRight /></div>
-                </Link>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function IdentityPreview() {
-  const showcase = divisions.filter((division) => ['intelligence', 'interactive', 'labs', 'products'].includes(division.slug));
-  return (
-    <section className="sy-section sy-identity-section">
-      <div className="sy-shell sy-identity-layout">
-        <motion.div {...reveal} className="sy-identity-copy">
-          <p className="sy-kicker"><span /> 03 / Sistema visual</p>
-          <h2>Os símbolos não são decoração.</h2>
-          <p>Intelligence, Interactive, Labs e Products já têm linguagens visuais próprias. Systems e Engineering seguem a mesma lógica de autonomia sem quebrar a família.</p>
-          <Link href="/brand" className="sy-text-link">Ver sistema completo <HiArrowUpRight /></Link>
-        </motion.div>
-        <div className="sy-identity-board">
-          {showcase.map((division) => (
-            <Link href={`/divisions/${division.slug}`} key={division.slug} className={`sy-identity-tile identity-${division.slug}`}>
-              <span>PRIMARY LOGO</span>
-              <Mark src={division.mark} alt={`Logo ${division.name}`} />
-              <strong>{division.name.toUpperCase()}</strong>
-              <div className="sy-palette"><i style={{ background: division.color }} /><i style={{ background: division.colorSoft }} /><i /></div>
+      <div className="se-division-list">
+        {divisions.map((division, index) => (
+          <motion.div key={division.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .04 }}>
+            <Link href={`/divisions/${division.slug}`} className="se-division-row">
+              <span className="se-row-index">0{index + 1}</span>
+              <div className="se-row-name"><small>SYPHER</small><strong>{division.name}</strong></div>
+              <p>{division.role}</p>
+              <div className="se-row-mark"><img src={division.mark} alt="" /></div>
+              <HiArrowUpRight />
             </Link>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
 }
 
-function Closing() {
+function Work() {
   return (
-    <section className="sy-closing">
-      <div className="sy-shell sy-closing-layout">
-        <div><p className="sy-kicker"><span /> 04 / Direção</p><h2>Começar por software.<br /><em>Ganhar o direito de expandir.</em></h2></div>
-        <div className="sy-closing-actions"><Link href="/founder">Fundador <HiArrowUpRight /></Link><Link href="/after-hours">After Hours <HiArrowUpRight /></Link></div>
+    <section className="se-work" id="work">
+      <div className="se-section-head se-section-head-light">
+        <span>03 / SELECTED WORK</span>
+        <h2>Ideas become<br />real systems.</h2>
       </div>
-      <div className="sy-shell sy-footer-line"><span>SYPHER</span><span>Tecnologia · Engenharia · Pesquisa</span><span>Construída para evoluir.</span></div>
+
+      <div className="se-work-grid">
+        {projects.slice(0, 4).map((project, index) => (
+          <motion.div key={project.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .05 }}>
+            <Link href={`/projects/${project.slug}`} className={`se-project-card se-project-${index + 1}`}>
+              <div className="se-project-top"><span>0{index + 1}</span><span>{project.status}</span></div>
+              <div className="se-project-visual">
+                <img src={project.mark} alt={`Marca ${project.name}`} />
+                <span className="se-project-orbit" />
+              </div>
+              <div className="se-project-copy">
+                <small>{project.category}</small>
+                <h3>{project.name}</h3>
+                <p>{project.tagline}</p>
+              </div>
+              <HiArrowUpRight className="se-project-arrow" />
+            </Link>
+          </motion.div>
+        ))}
+      </div>
     </section>
+  );
+}
+
+function Lab() {
+  return (
+    <section className="se-lab">
+      <div className="se-lab-art" aria-hidden="true">
+        <div className="se-lab-circle" />
+        <div className="se-lab-ring r1" />
+        <div className="se-lab-ring r2" />
+        <BrandMark className="se-lab-mark" />
+      </div>
+      <motion.div {...reveal} className="se-lab-copy">
+        <span>04 / LAB NOTES</span>
+        <h2>Experiment first.<br />Explain later.</h2>
+        <p>Protótipos, pesquisas, interfaces, sistemas e ideias que ainda estão ganhando forma.</p>
+        <Link href="/after-hours">Enter After Hours <HiArrowUpRight /></Link>
+      </motion.div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="se-footer">
+      <div className="se-footer-top">
+        <span>TECHNOLOGY / ENGINEERING / RESEARCH</span>
+        <span>BETIM — MINAS GERAIS — BR</span>
+      </div>
+      <div className="se-footer-word">SYPHER</div>
+      <div className="se-footer-bottom">
+        <span>© 2026 SYPHER</span>
+        <div><Link href="/brand">Brand system</Link><Link href="/founder">Founder</Link><a href="#top">Back to top ↑</a></div>
+      </div>
+    </footer>
   );
 }
 
 export default function SypherHome() {
   return (
-    <main className="sy-home">
-      <Header />
+    <main className="se-site" id="top">
+      <EditorialHeader />
       <Hero />
+      <Manifesto />
       <Divisions />
-      <Projects />
-      <IdentityPreview />
-      <Closing />
+      <Work />
+      <Lab />
+      <Footer />
     </main>
   );
 }
