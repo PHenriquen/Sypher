@@ -13,6 +13,7 @@ import "./home-division-previews.css";
 import "./sypher-theme.css";
 import "./sypher-editorial.css";
 import "./sypher-site-v2.css";
+import "./sypher-site-v3.css";
 
 export const metadata: Metadata = {
   title: {
