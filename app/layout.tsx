@@ -11,6 +11,7 @@ import "./template-tailwind.css";
 import "./division-worlds.css";
 import "./home-division-previews.css";
 import "./sypher-theme.css";
+import "./sypher-editorial.css";
 
 export const metadata: Metadata = {
   title: {
