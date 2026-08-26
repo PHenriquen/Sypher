@@ -3,80 +3,81 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
-import { company, divisions, projects } from '../brand';
+import { divisions, projects } from '../brand';
 
 const reveal = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 22 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-80px' },
-  transition: { duration: 0.68, ease: [0.16, 1, 0.3, 1] as const },
+  viewport: { once: true, margin: '-70px' },
+  transition: { duration: 0.58, ease: [0.16, 1, 0.3, 1] as const },
 };
 
 const identitySlugs = ['intelligence', 'interactive', 'labs', 'products'];
 const activeIdentities = divisions.filter((division) => identitySlugs.includes(division.slug));
 
-function BrandMark({ className = '' }: { className?: string }) {
+const identityUse: Record<string, string> = {
+  intelligence: 'IA, assistentes e automação contextual',
+  interactive: 'Jogos e experiências interativas',
+  labs: 'Pesquisa, estudos técnicos e protótipos',
+  products: 'SaaS, ferramentas e produtos digitais',
+};
+
+function SypherMark({ className = '' }: { className?: string }) {
   return <img className={className} src="/brand/sypher.svg" alt="Símbolo da Sypher" />;
 }
 
 function Header() {
   return (
-    <header className="se-header">
-      <div className="se-header-inner">
-        <Link className="se-wordmark" href="/">SYPHER</Link>
+    <header className="sy2-header">
+      <div className="sy2-header-inner">
+        <Link href="/" className="sy2-wordmark">SYPHER</Link>
         <nav aria-label="Navegação principal">
-          <a href="#work">Projetos</a>
-          <a href="#explore">Explorar</a>
+          <a href="#projects">Projetos</a>
+          <a href="#areas">Áreas</a>
           <a href="#about">Sobre</a>
           <Link href="/brand">Identidade</Link>
         </nav>
-        <a className="se-index-link" href="#work">VIEW WORK ↘</a>
+        <a className="sy2-header-index" href="#projects">INDEX ↓</a>
       </div>
     </header>
   );
 }
 
-function OrbitArtwork() {
+function HeroVisual() {
   return (
-    <div className="se-orbit-art" aria-hidden="true">
-      <div className="se-orbit-noise" />
-      <div className="se-orbit-blob blob-a" />
-      <div className="se-orbit-blob blob-b" />
-      <div className="se-orbit-line line-a" />
-      <div className="se-orbit-line line-b" />
-      <div className="se-orbit-axis axis-x" />
-      <div className="se-orbit-axis axis-y" />
-      <span className="se-star star-a">✦</span>
-      <span className="se-star star-b">✦</span>
-      <span className="se-star star-c">+</span>
-      <BrandMark className="se-orbit-mark" />
+    <div className="sy2-hero-visual" aria-hidden="true">
+      <div className="sy2-noise-orb orb-one" />
+      <div className="sy2-noise-orb orb-two" />
+      <div className="sy2-orbit orbit-one" />
+      <div className="sy2-orbit orbit-two" />
+      <span className="sy2-cross cross-x" />
+      <span className="sy2-cross cross-y" />
+      <span className="sy2-spark spark-a">✦</span>
+      <span className="sy2-spark spark-b">✦</span>
+      <SypherMark className="sy2-hero-mark" />
     </div>
   );
 }
 
 function Hero() {
   return (
-    <section className="se-hero">
-      <div className="se-hero-meta se-meta-left">INDEPENDENT TECHNOLOGY COMPANY<br />BRASIL — 2026</div>
-      <div className="se-hero-meta se-meta-right">NO FIXED ROADMAP<br />BUILD → LEARN → EXPAND</div>
-
-      <OrbitArtwork />
-
-      <motion.div
-        initial={{ opacity: 0, y: 26 }}
+    <section className="sy2-hero">
+      <div className="sy2-meta sy2-meta-left">EMPRESA DE TECNOLOGIA EM FORMAÇÃO<br />BRASIL — 2026</div>
+      <div className="sy2-meta sy2-meta-right">SOFTWARE / IA / PRODUTOS<br />HARDWARE / INTERATIVO / PESQUISA</div>
+      <HeroVisual />
+      <motion.h1
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: .82, ease: [0.16, 1, 0.3, 1] }}
-        className="se-hero-title-wrap"
+        transition={{ duration: .78, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h1>SYPHER</h1>
-      </motion.div>
-
-      <div className="se-hero-bottom">
+        SYPHER
+      </motion.h1>
+      <div className="sy2-hero-bottom">
         <p>
-          A Sypher é uma marca de tecnologia em construção. O que ela se torna não é definido por um organograma —
-          é definido pelo que vale a pena construir.
+          A Sypher reúne projetos próprios de tecnologia. A estrutura da marca acompanha o que está sendo desenvolvido,
+          sem limitar a empresa a uma única área.
         </p>
-        <a href="#work">Ver trabalho <HiArrowDownRight /></a>
+        <a href="#projects">Projetos atuais <HiArrowDownRight /></a>
       </div>
     </section>
   );
@@ -84,64 +85,66 @@ function Hero() {
 
 function About() {
   return (
-    <section className="se-manifesto" id="about">
-      <div className="se-section-index">01 / DIRECTION</div>
-      <motion.div {...reveal} className="se-manifesto-grid">
-        <div className="se-manifesto-side">
-          <p className="se-eyebrow">NOT A ROADMAP.<br />A DIRECTION.</p>
-          <span>EST. 2026</span>
+    <section className="sy2-about" id="about">
+      <div className="sy2-section-label">01 / SOBRE</div>
+      <motion.div {...reveal} className="sy2-about-grid">
+        <div className="sy2-about-title">
+          <span>SYPHER / 2026</span>
+          <h2>O que é a Sypher</h2>
         </div>
-        <h2>
-          A estrutura não vem antes do trabalho.
-          <span> Ela nasce dele.</span>
-        </h2>
-        <div className="se-manifesto-copy">
+        <div className="sy2-about-copy">
           <p>
-            A Sypher começa por software, mas não se limita a uma categoria. Inteligência, produtos, experiências,
-            sistemas físicos e pesquisa entram quando existe um projeto real que justifique esse espaço.
+            A Sypher é uma empresa de tecnologia em formação. Hoje os projetos passam por software, inteligência artificial,
+            sistemas industriais, hardware e experiências interativas.
           </p>
           <p>
-            Sem departamentos inventados para parecer maior. Sem promessa de futuro tratada como presente. Primeiro a
-            coisa existe; depois a marca encontra a forma certa de organizá-la.
+            As áreas da marca são organizadas quando existe trabalho suficiente para justificar uma identidade própria.
+            Por isso, Intelligence, Interactive, Labs e Products já têm sistemas visuais definidos, enquanto outras áreas
+            continuam abertas conforme novos projetos aparecem.
           </p>
-          <div className="se-principles">
-            <span><b>01</b> BUILD FIRST</span>
-            <span><b>02</b> NAME WHAT EXISTS</span>
-            <span><b>03</b> EXPAND WHEN EARNED</span>
-          </div>
+        </div>
+        <div className="sy2-about-facts">
+          <div><span>BASE</span><strong>Brasil</strong></div>
+          <div><span>STATUS</span><strong>Em formação</strong></div>
+          <div><span>FOCO ATUAL</span><strong>Projetos próprios</strong></div>
+          <div><span>MODELO</span><strong>Marca aberta a novas áreas</strong></div>
         </div>
       </motion.div>
     </section>
   );
 }
 
-function Work() {
+function Projects() {
   return (
-    <section className="se-work" id="work">
-      <div className="se-section-head se-section-head-light">
-        <span>02 / CURRENT WORK</span>
+    <section className="sy2-projects" id="projects">
+      <div className="sy2-section-heading sy2-section-heading-dark">
+        <span>02 / PROJETOS</span>
         <div>
-          <h2>O trabalho vem<br />antes da estrutura.</h2>
-          <p>Projetos reais são o centro da Sypher. O restante da arquitetura existe para dar contexto a eles — não o contrário.</p>
+          <h2>Projetos atuais</h2>
+          <p>Trabalhos que já existem como projeto, protótipo ou produto em desenvolvimento.</p>
         </div>
       </div>
 
-      <div className="se-work-grid">
-        {projects.slice(0, 4).map((project, index) => (
-          <motion.div key={project.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .05 }}>
-            <Link href={`/projects/${project.slug}`} className={`se-project-card se-project-${index + 1}`}>
-              <div className="se-project-top"><span>0{index + 1}</span><span>{project.status}</span></div>
-              <div className="se-project-visual">
-                <span className="se-project-crosshair" />
-                <img src={project.mark} alt={`Marca ${project.name}`} />
-                <span className="se-project-orbit" />
+      <div className="sy2-project-grid">
+        {projects.map((project, index) => (
+          <motion.div key={project.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .035 }}>
+            <Link href={`/projects/${project.slug}`} className="sy2-project-card">
+              <div className="sy2-project-top">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{project.status}</span>
               </div>
-              <div className="se-project-copy">
+              <div className="sy2-project-art">
+                <span className="sy2-project-axis axis-horizontal" />
+                <span className="sy2-project-axis axis-vertical" />
+                <span className="sy2-project-ring" />
+                <img src={project.mark} alt={`Marca ${project.name}`} />
+              </div>
+              <div className="sy2-project-info">
                 <small>{project.category}</small>
                 <h3>{project.name}</h3>
-                <p>{project.tagline}</p>
+                <p>{project.description}</p>
               </div>
-              <HiArrowUpRight className="se-project-arrow" />
+              <HiArrowUpRight className="sy2-project-arrow" />
             </Link>
           </motion.div>
         ))}
@@ -150,39 +153,37 @@ function Work() {
   );
 }
 
-function Explore() {
+function Areas() {
   return (
-    <section className="se-explore" id="explore">
-      <div className="se-section-head">
-        <span>03 / IDENTITIES</span>
+    <section className="sy2-areas" id="areas">
+      <div className="sy2-section-heading">
+        <span>03 / ÁREAS</span>
         <div>
-          <h2>Linguagens prontas.<br />Não departamentos.</h2>
+          <h2>Identidades já definidas</h2>
           <p>
-            Algumas áreas já têm identidade própria porque representam tipos de trabalho que fazem sentido para a Sypher.
-            Elas existem como possibilidades organizadas — e ganham peso conforme os projetos ganham vida.
+            Estas são as quatro áreas que já possuem linguagem visual própria. Os símbolos abaixo são os oficiais de cada identidade.
           </p>
         </div>
       </div>
 
-      <div className="se-identity-grid">
+      <div className="sy2-area-grid">
         {activeIdentities.map((division, index) => (
-          <motion.div key={division.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .05 }}>
-            <Link href={`/divisions/${division.slug}`} className="se-identity-card">
-              <div className="se-identity-top">
-                <span>0{index + 1}</span>
-                <span>IDENTITY SYSTEM</span>
+          <motion.div key={division.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .04 }}>
+            <Link href={`/divisions/${division.slug}`} className={`sy2-area-card sy2-area-${division.slug}`}>
+              <div className="sy2-area-top">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{division.focus}</span>
               </div>
-              <div className="se-identity-mark">
-                <span className="se-identity-ring" />
-                <img src={division.mark} alt={`Marca Sypher ${division.name}`} />
+              <div className="sy2-area-logo-wrap">
+                <img src={division.mark} alt={`Símbolo Sypher ${division.name}`} />
               </div>
-              <div className="se-identity-copy">
+              <div className="sy2-area-copy">
                 <small>SYPHER</small>
                 <h3>{division.name}</h3>
-                <p>{division.role}</p>
+                <p>{identityUse[division.slug]}</p>
               </div>
-              <div className="se-identity-bottom">
-                <span>{division.keywords.slice(0, 3).join(' / ')}</span>
+              <div className="sy2-area-footer">
+                <span>{division.keywords.join(' / ')}</span>
                 <HiArrowUpRight />
               </div>
             </Link>
@@ -190,9 +191,12 @@ function Explore() {
         ))}
       </div>
 
-      <div className="se-explore-note">
-        <span>OPEN ARCHITECTURE</span>
-        <p>Se amanhã surgir uma área que mereça existir, a Sypher pode criá-la. Se uma ideia não se sustentar, ela não precisa virar uma divisão.</p>
+      <div className="sy2-area-note">
+        <span>OUTRAS ÁREAS</span>
+        <p>
+          Systems e Engineering continuam como possibilidades técnicas, mas não são apresentadas aqui como divisões consolidadas.
+          Elas podem ganhar identidade própria quando os projetos justificarem isso.
+        </p>
       </div>
     </section>
   );
@@ -200,36 +204,21 @@ function Explore() {
 
 function AfterHours() {
   return (
-    <section className="se-after-hours">
-      <div className="se-ah-visual" aria-hidden="true">
-        <span className="se-ah-line line-1" />
-        <span className="se-ah-line line-2" />
-        <span className="se-ah-dot dot-1" />
-        <span className="se-ah-dot dot-2" />
-        <div className="se-ah-word"><span>AFTER</span><span>HOURS</span></div>
+    <section className="sy2-after-hours">
+      <div className="sy2-ah-brand">
+        <div className="sy2-ah-logo-panel">
+          <img src="/brand/after-hours.svg" alt="Símbolo After Hours" />
+        </div>
+        <div className="sy2-ah-name">AFTER HOURS</div>
       </div>
-      <motion.div {...reveal} className="se-ah-copy">
-        <span>04 / PARALLEL SPACE</span>
-        <p className="se-ah-label">NOT A DIVISION.</p>
-        <h2>Nem tudo precisa<br />caber no organograma.</h2>
+      <motion.div {...reveal} className="sy2-ah-copy">
+        <span>04 / ESPAÇO PARALELO</span>
+        <h2>After Hours</h2>
         <p>
-          After Hours é o espaço paralelo da Sypher para experimentos, cultura, estudos e ideias que podem ser estranhas,
-          incompletas ou simplesmente interessantes demais para esperar uma categoria.
+          After Hours não é uma divisão da empresa. É um espaço separado para experimentos, estudos, conceitos visuais e ideias
+          que ainda não pertencem a um produto ou área específica.
         </p>
-        <Link href="/after-hours">Entrar no After Hours <HiArrowUpRight /></Link>
-      </motion.div>
-    </section>
-  );
-}
-
-function Closing() {
-  return (
-    <section className="se-closing">
-      <span>05 / OPEN SYSTEM</span>
-      <motion.div {...reveal} className="se-closing-grid">
-        <p>THE FORM FOLLOWS THE WORK.</p>
-        <h2>Sypher não é uma lista do que vamos fazer.<br /><em>É o nome do que estamos construindo.</em></h2>
-        <Link href="/brand">Ver sistema de identidade <HiArrowUpRight /></Link>
+        <Link href="/after-hours">Abrir After Hours <HiArrowUpRight /></Link>
       </motion.div>
     </section>
   );
@@ -237,16 +226,17 @@ function Closing() {
 
 function Footer() {
   return (
-    <footer className="se-footer">
-      <div className="se-footer-top">
-        <span>TECHNOLOGY / CREATION / ENGINEERING</span>
+    <footer className="sy2-footer">
+      <div className="sy2-footer-top">
+        <span>SYPHER / TECNOLOGIA</span>
         <span>BRASIL — 2026</span>
       </div>
-      <div className="se-footer-word">SYPHER</div>
-      <div className="se-footer-bottom">
+      <div className="sy2-footer-word">SYPHER</div>
+      <div className="sy2-footer-bottom">
         <span>© 2026 SYPHER</span>
         <div>
-          <a href="#work">Projetos</a>
+          <a href="#projects">Projetos</a>
+          <a href="#areas">Áreas</a>
           <Link href="/brand">Identidade</Link>
           <a href="#top">Topo ↑</a>
         </div>
@@ -257,14 +247,13 @@ function Footer() {
 
 export default function SypherHome() {
   return (
-    <main className="se-site" id="top">
+    <main className="sy2-site" id="top">
       <Header />
       <Hero />
       <About />
-      <Work />
-      <Explore />
+      <Projects />
+      <Areas />
       <AfterHours />
-      <Closing />
       <Footer />
     </main>
   );
