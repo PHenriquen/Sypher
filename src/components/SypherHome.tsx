@@ -3,7 +3,7 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
+import { HiArrowDownRight } from 'react-icons/hi2';
 import { divisions } from '../brand';
 
 const reveal = {
@@ -14,13 +14,15 @@ const reveal = {
 };
 
 const identitySlugs = ['intelligence', 'interactive', 'labs', 'products'];
-const activeIdentities = divisions.filter((division) => identitySlugs.includes(division.slug));
+const activeIdentities = identitySlugs
+  .map((slug) => divisions.find((division) => division.slug === slug))
+  .filter((division): division is (typeof divisions)[number] => Boolean(division));
 
-const identityUse: Record<string, string> = {
-  intelligence: 'IA, assistentes e automação contextual',
-  interactive: 'Jogos e experiências interativas',
-  labs: 'Pesquisa, estudos técnicos e protótipos',
-  products: 'SaaS, ferramentas e produtos digitais',
+const identitySheets: Record<string, string> = {
+  intelligence: '/brand/identity-sheets/intelligence.png',
+  interactive: '/brand/identity-sheets/interactive.png',
+  labs: '/brand/identity-sheets/labs.png',
+  products: '/brand/identity-sheets/products.png',
 };
 
 function accent(color: string) {
@@ -147,28 +149,15 @@ function Areas() {
           >
             <Link
               href={`/divisions/${division.slug}`}
-              className={`sy2-area-card sy2-area-${division.slug}`}
+              className={`sy2-area-card sy2-area-sheet-card sy2-area-${division.slug}`}
               style={accent(division.color)}
+              aria-label={`Conhecer Sypher ${division.name}`}
             >
-              <div className="sy2-area-glow" aria-hidden="true" />
-              <div className="sy2-area-top">
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <span>{division.focus}</span>
-              </div>
-              <div className="sy2-area-logo-wrap">
-                <span className="sy2-area-orbit" />
-                <span className="sy2-area-orbit sy2-area-orbit-2" />
-                <img src={division.mark} alt={`Símbolo Sypher ${division.name}`} />
-              </div>
-              <div className="sy2-area-copy">
-                <small>SYPHER</small>
-                <h3>{division.name}</h3>
-                <p>{identityUse[division.slug]}</p>
-              </div>
-              <div className="sy2-area-footer">
-                <span>{division.keywords.join(' / ')}</span>
-                <HiArrowUpRight />
-              </div>
+              <img
+                className="sy2-area-brand-sheet"
+                src={identitySheets[division.slug]}
+                alt={`Prancha oficial da identidade Sypher ${division.name}`}
+              />
             </Link>
           </motion.div>
         ))}

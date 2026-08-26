@@ -351,3 +351,38 @@
   .sy2-area-card,
   .sy2-area-logo-wrap img { transition-duration: .01ms !important; }
 }
+
+/* Official division identity sheets — preserved exactly as supplied. */
+.sy2-area-grid { align-items: start; }
+.sy2-area-cell { align-self: start; }
+.sy2-area-card.sy2-area-sheet-card {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #050505;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 16px;
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+.sy2-area-card.sy2-area-sheet-card::before,
+.sy2-area-card.sy2-area-sheet-card::after { display: none; }
+.sy2-area-card.sy2-area-sheet-card:hover {
+  background: #050505;
+  transform: translateY(-4px);
+}
+.sy2-area-brand-sheet {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+  filter: none;
+  transform: none;
+}
+.sy2-area-sheet-card:hover .sy2-area-brand-sheet {
+  filter: none;
+  transform: none;
+}
