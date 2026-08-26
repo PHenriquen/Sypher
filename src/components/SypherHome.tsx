@@ -1,15 +1,16 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
 import { divisions, projects } from '../brand';
 
 const reveal = {
-  initial: { opacity: 0, y: 22 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-70px' },
-  transition: { duration: 0.58, ease: [0.16, 1, 0.3, 1] as const },
+  transition: { duration: 0.56, ease: [0.16, 1, 0.3, 1] as const },
 };
 
 const identitySlugs = ['intelligence', 'interactive', 'labs', 'products'];
@@ -21,6 +22,10 @@ const identityUse: Record<string, string> = {
   labs: 'Pesquisa, estudos técnicos e protótipos',
   products: 'SaaS, ferramentas e produtos digitais',
 };
+
+function accent(color: string) {
+  return { '--sy2-accent': color } as CSSProperties;
+}
 
 function SypherMark({ className = '' }: { className?: string }) {
   return <img className={className} src="/brand/sypher.svg" alt="Símbolo da Sypher" />;
@@ -66,9 +71,9 @@ function Hero() {
       <div className="sy2-meta sy2-meta-right">SOFTWARE / IA / PRODUTOS<br />HARDWARE / INTERATIVO / PESQUISA</div>
       <HeroVisual />
       <motion.h1
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: .78, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: .76, ease: [0.16, 1, 0.3, 1] }}
       >
         SYPHER
       </motion.h1>
@@ -98,16 +103,15 @@ function About() {
             sistemas industriais, hardware e experiências interativas.
           </p>
           <p>
-            As áreas da marca são organizadas quando existe trabalho suficiente para justificar uma identidade própria.
-            Por isso, Intelligence, Interactive, Labs e Products já têm sistemas visuais definidos, enquanto outras áreas
-            continuam abertas conforme novos projetos aparecem.
+            Intelligence, Interactive, Labs e Products já têm identidades visuais próprias. Outras áreas só entram na estrutura
+            quando houver projetos suficientes para justificar isso.
           </p>
         </div>
         <div className="sy2-about-facts">
           <div><span>BASE</span><strong>Brasil</strong></div>
           <div><span>STATUS</span><strong>Em formação</strong></div>
           <div><span>FOCO ATUAL</span><strong>Projetos próprios</strong></div>
-          <div><span>MODELO</span><strong>Marca aberta a novas áreas</strong></div>
+          <div><span>ESTRUTURA</span><strong>Expansão conforme os projetos</strong></div>
         </div>
       </motion.div>
     </section>
@@ -117,18 +121,18 @@ function About() {
 function Projects() {
   return (
     <section className="sy2-projects" id="projects">
-      <div className="sy2-section-heading sy2-section-heading-dark">
+      <div className="sy2-section-heading">
         <span>02 / PROJETOS</span>
         <div>
           <h2>Projetos atuais</h2>
-          <p>Trabalhos que já existem como projeto, protótipo ou produto em desenvolvimento.</p>
+          <p>Projetos, protótipos e produtos que já estão em desenvolvimento.</p>
         </div>
       </div>
 
       <div className="sy2-project-grid">
         {projects.map((project, index) => (
           <motion.div key={project.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .035 }}>
-            <Link href={`/projects/${project.slug}`} className="sy2-project-card">
+            <Link href={`/projects/${project.slug}`} className="sy2-project-card" style={accent(project.accent)}>
               <div className="sy2-project-top">
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <span>{project.status}</span>
@@ -160,21 +164,24 @@ function Areas() {
         <span>03 / ÁREAS</span>
         <div>
           <h2>Identidades já definidas</h2>
-          <p>
-            Estas são as quatro áreas que já possuem linguagem visual própria. Os símbolos abaixo são os oficiais de cada identidade.
-          </p>
+          <p>Estas quatro áreas já possuem símbolo, paleta e linguagem visual próprios.</p>
         </div>
       </div>
 
       <div className="sy2-area-grid">
         {activeIdentities.map((division, index) => (
           <motion.div key={division.slug} {...reveal} transition={{ ...reveal.transition, delay: index * .04 }}>
-            <Link href={`/divisions/${division.slug}`} className={`sy2-area-card sy2-area-${division.slug}`}>
+            <Link
+              href={`/divisions/${division.slug}`}
+              className={`sy2-area-card sy2-area-${division.slug}`}
+              style={accent(division.color)}
+            >
               <div className="sy2-area-top">
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <span>{division.focus}</span>
               </div>
               <div className="sy2-area-logo-wrap">
+                <span className="sy2-area-orbit" />
                 <img src={division.mark} alt={`Símbolo Sypher ${division.name}`} />
               </div>
               <div className="sy2-area-copy">
@@ -194,8 +201,7 @@ function Areas() {
       <div className="sy2-area-note">
         <span>OUTRAS ÁREAS</span>
         <p>
-          Systems e Engineering continuam como possibilidades técnicas, mas não são apresentadas aqui como divisões consolidadas.
-          Elas podem ganhar identidade própria quando os projetos justificarem isso.
+          Systems e Engineering continuam como possibilidades técnicas, mas ainda não são apresentadas como divisões consolidadas.
         </p>
       </div>
     </section>
@@ -207,6 +213,7 @@ function AfterHours() {
     <section className="sy2-after-hours">
       <div className="sy2-ah-brand">
         <div className="sy2-ah-logo-panel">
+          <span className="sy2-ah-orbit" />
           <img src="/brand/after-hours.svg" alt="Símbolo After Hours" />
         </div>
         <div className="sy2-ah-name">AFTER HOURS</div>
@@ -231,7 +238,6 @@ function Footer() {
         <span>SYPHER / TECNOLOGIA</span>
         <span>BRASIL — 2026</span>
       </div>
-      <div className="sy2-footer-word">SYPHER</div>
       <div className="sy2-footer-bottom">
         <span>© 2026 SYPHER</span>
         <div>
