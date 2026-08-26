@@ -39,7 +39,6 @@ function Header() {
         <nav aria-label="Navegação principal">
           <a href="#areas">Áreas</a>
           <a href="#about">Sobre</a>
-          <Link href="/after-hours">After Hours</Link>
           <Link href="/brand">Identidade</Link>
         </nav>
         <a className="sy2-header-index" href="#areas">EXPLORE ↓</a>
@@ -182,30 +181,6 @@ function Areas() {
   );
 }
 
-function AfterHours() {
-  return (
-    <section className="sy2-after-hours">
-      <div className="sy2-ah-brand">
-        <div className="sy2-ah-grid-lines" aria-hidden="true" />
-        <div className="sy2-ah-logo-panel">
-          <span className="sy2-ah-orbit" />
-          <span className="sy2-ah-orbit sy2-ah-orbit-2" />
-          <img src="/brand/after-hours.svg" alt="Símbolo After Hours" />
-        </div>
-        <div className="sy2-ah-name">AFTER HOURS</div>
-      </div>
-      <motion.div {...reveal} className="sy2-ah-copy">
-        <span>03 / ESPAÇO PARALELO</span>
-        <h2>After Hours</h2>
-        <p>
-          Espaço separado para experimentos, estudos, conceitos visuais e ideias que ainda não pertencem a um produto ou área específica.
-        </p>
-        <Link href="/after-hours">Abrir After Hours <HiArrowUpRight /></Link>
-      </motion.div>
-    </section>
-  );
-}
-
 function Footer() {
   return (
     <footer className="sy2-footer">
@@ -233,7 +208,6 @@ export default function SypherHome() {
       <Hero />
       <About />
       <Areas />
-      <AfterHours />
       <Footer />
     </main>
   );
