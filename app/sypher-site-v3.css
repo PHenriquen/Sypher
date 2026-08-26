@@ -42,7 +42,10 @@
   font-size: clamp(86px,17.2vw,308px);
   color: #f5f5f1;
   text-shadow: 0 24px 90px rgba(0,0,0,.52);
+  overflow: hidden;
+  white-space: nowrap;
 }
+.sy2-hero h1 span { display: inline-block; transform-origin: 50% 100%; }
 
 .sy2-meta { color: #74746f; }
 .sy2-hero-bottom { border-top-color: rgba(255,255,255,.2); }
@@ -52,6 +55,40 @@
 .sy2-hero-visual {
   width: clamp(330px,39vw,690px);
   filter: drop-shadow(0 34px 70px rgba(0,0,0,.4));
+  animation: sy2-hero-drift 9s ease-in-out 1.7s infinite;
+}
+
+.sy2-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  background: #050505;
+}
+.sy2-intro-lockup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #f4f4ef;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .34em;
+}
+.sy2-intro-lockup img {
+  width: 42px;
+  height: 42px;
+  filter: grayscale(1) brightness(2.7) contrast(1.25);
+}
+.sy2-intro-line {
+  position: absolute;
+  left: 12vw;
+  right: 12vw;
+  bottom: 13vh;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,#f4f4ef 18% 82%,transparent);
+  transform-origin: left;
 }
 
 .sy2-noise-orb.orb-one {
@@ -202,6 +239,54 @@
 
 .sy2-area-copy h3 { letter-spacing: -.055em; }
 .sy2-area-copy p { color: #aaa9a3; }
+.sy2-area-intelligence .sy2-area-copy h3 {
+  font-family: Arial Black, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+.sy2-area-interactive .sy2-area-copy h3 {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 900;
+  letter-spacing: -.075em;
+  text-transform: uppercase;
+}
+.sy2-area-labs .sy2-area-copy h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.sy2-area-products .sy2-area-copy h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sy2-area-palette {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 7px;
+  margin-top: 24px;
+}
+.sy2-area-palette > span { min-width: 0; }
+.sy2-area-palette i {
+  display: block;
+  height: 30px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 7px;
+  box-shadow: inset 0 1px rgba(255,255,255,.1);
+}
+.sy2-area-palette small {
+  display: block;
+  margin-top: 7px;
+  overflow: hidden;
+  color: #656560;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px;
+  letter-spacing: .04em;
+  text-align: center;
+}
 .sy2-area-footer { color: #6f6f6a; border-top-color: rgba(255,255,255,.1); }
 .sy2-area-footer svg { color: var(--sy2-accent); transition: transform .22s ease; }
 .sy2-area-card:hover .sy2-area-footer svg { transform: translate(3px,-3px); }
@@ -311,6 +396,10 @@
   0%,100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-8px) rotate(1.5deg); }
 }
+@keyframes sy2-hero-drift {
+  0%,100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
 @keyframes sy2-area-spin {
   from { transform: rotate(-18deg); }
   to { transform: rotate(342deg); }
@@ -341,6 +430,7 @@
   .sy2-area-logo-wrap { min-height: 250px; }
   .sy2-area-orbit { width: 230px; height: 118px; }
   .sy2-area-orbit-2 { width: 188px; height: 156px; }
+  .sy2-area-palette small { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -350,39 +440,6 @@
   .sy2-ah-logo-panel img { animation: none !important; }
   .sy2-area-card,
   .sy2-area-logo-wrap img { transition-duration: .01ms !important; }
-}
-
-/* Official division identity sheets — preserved exactly as supplied. */
-.sy2-area-grid { align-items: start; }
-.sy2-area-cell { align-self: start; }
-.sy2-area-card.sy2-area-sheet-card {
-  display: block;
-  min-height: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #050505;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 16px;
-  box-shadow: 0 18px 55px rgba(0,0,0,.22);
-}
-.sy2-area-card.sy2-area-sheet-card::before,
-.sy2-area-card.sy2-area-sheet-card::after { display: none; }
-.sy2-area-card.sy2-area-sheet-card:hover {
-  background: #050505;
-  transform: translateY(-4px);
-}
-.sy2-area-brand-sheet {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: none;
-  border-radius: 0;
-  box-shadow: none;
-  object-fit: contain;
-  filter: none;
-  transform: none;
-}
-.sy2-area-sheet-card:hover .sy2-area-brand-sheet {
-  filter: none;
-  transform: none;
+  .sy2-intro { display: none; }
+  .sy2-hero-visual { animation: none !important; }
 }

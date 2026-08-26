@@ -3,7 +3,7 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { HiArrowDownRight } from 'react-icons/hi2';
+import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
 import { divisions } from '../brand';
 
 const reveal = {
@@ -18,11 +18,33 @@ const activeIdentities = identitySlugs
   .map((slug) => divisions.find((division) => division.slug === slug))
   .filter((division): division is (typeof divisions)[number] => Boolean(division));
 
-const identitySheets: Record<string, string> = {
-  intelligence: '/brand/identity-sheets/intelligence.png',
-  interactive: '/brand/identity-sheets/interactive.png',
-  labs: '/brand/identity-sheets/labs.png',
-  products: '/brand/identity-sheets/products.png',
+const identityDetails: Record<string, { use: string; palette: string[] }> = {
+  intelligence: {
+    use: 'IA, assistentes e automação contextual',
+    palette: ['#07152B', '#0D1F3F', '#1E40FF', '#00D6FF', '#70E7FF'],
+  },
+  interactive: {
+    use: 'Jogos e experiências interativas',
+    palette: ['#1D1D1D', '#2B2B2B', '#FFD200', '#FFB800', '#E6E6E6'],
+  },
+  labs: {
+    use: 'Pesquisa, estudos técnicos e protótipos',
+    palette: ['#E53935', '#F44336', '#FF5252', '#FF8A80', '#B71C1C'],
+  },
+  products: {
+    use: 'SaaS, ferramentas e produtos digitais',
+    palette: ['#06301F', '#0E4D32', '#00C896', '#6DFFC1', '#B5FFDE'],
+  },
+};
+
+const letterReveal = {
+  hidden: { y: '118%', opacity: 0, rotate: 3 },
+  visible: (index: number) => ({
+    y: '0%',
+    opacity: 1,
+    rotate: 0,
+    transition: { delay: .72 + index * .07, duration: .72, ease: [0.16, 1, 0.3, 1] as const },
+  }),
 };
 
 function accent(color: string) {
@@ -31,6 +53,34 @@ function accent(color: string) {
 
 function SypherMark({ className = '' }: { className?: string }) {
   return <img className={className} src="/brand/sypher.svg" alt="Símbolo da Sypher" />;
+}
+
+function Intro() {
+  return (
+    <motion.div
+      className="sy2-intro"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 0 }}
+      transition={{ delay: 1.35, duration: .55, ease: 'easeOut' }}
+      aria-hidden="true"
+    >
+      <motion.div
+        className="sy2-intro-lockup"
+        initial={{ opacity: 0, scale: .92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: .55, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <SypherMark />
+        <span>SYPHER</span>
+      </motion.div>
+      <motion.span
+        className="sy2-intro-line"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+      />
+    </motion.div>
+  );
 }
 
 function Header() {
@@ -51,7 +101,13 @@ function Header() {
 
 function HeroVisual() {
   return (
-    <div className="sy2-hero-visual" aria-hidden="true">
+    <motion.div
+      className="sy2-hero-visual"
+      initial={{ opacity: 0, scale: .82, rotate: -4 }}
+      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+      transition={{ delay: .38, duration: 1.25, ease: [0.16, 1, 0.3, 1] }}
+      aria-hidden="true"
+    >
       <div className="sy2-noise-orb orb-one" />
       <div className="sy2-noise-orb orb-two" />
       <div className="sy2-orbit orbit-one" />
@@ -70,7 +126,7 @@ function HeroVisual() {
           <img src={division.mark} alt="" />
         </span>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
@@ -80,12 +136,12 @@ function Hero() {
       <div className="sy2-meta sy2-meta-left">SYPHER<br />BRASIL — 2026</div>
       <div className="sy2-meta sy2-meta-right">SOFTWARE / IA / PRODUTOS<br />INTERATIVO / PESQUISA</div>
       <HeroVisual />
-      <motion.h1
-        initial={{ opacity: 0, y: 18, letterSpacing: '-.06em' }}
-        animate={{ opacity: 1, y: 0, letterSpacing: '-.078em' }}
-        transition={{ duration: .85, ease: [0.16, 1, 0.3, 1] }}
-      >
-        SYPHER
+      <motion.h1 initial="hidden" animate="visible" aria-label="Sypher">
+        {'SYPHER'.split('').map((letter, index) => (
+          <motion.span key={letter + index} custom={index} variants={letterReveal}>
+            {letter}
+          </motion.span>
+        ))}
       </motion.h1>
       <div className="sy2-hero-bottom">
         <p>
@@ -149,15 +205,37 @@ function Areas() {
           >
             <Link
               href={`/divisions/${division.slug}`}
-              className={`sy2-area-card sy2-area-sheet-card sy2-area-${division.slug}`}
+              className={`sy2-area-card sy2-area-${division.slug}`}
               style={accent(division.color)}
               aria-label={`Conhecer Sypher ${division.name}`}
             >
-              <img
-                className="sy2-area-brand-sheet"
-                src={identitySheets[division.slug]}
-                alt={`Prancha oficial da identidade Sypher ${division.name}`}
-              />
+              <div className="sy2-area-glow" aria-hidden="true" />
+              <div className="sy2-area-top">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{division.focus}</span>
+              </div>
+              <div className="sy2-area-logo-wrap">
+                <span className="sy2-area-orbit" />
+                <span className="sy2-area-orbit sy2-area-orbit-2" />
+                <img src={division.mark} alt={`Símbolo Sypher ${division.name}`} />
+              </div>
+              <div className="sy2-area-copy">
+                <small>SYPHER</small>
+                <h3>{division.name}</h3>
+                <p>{identityDetails[division.slug].use}</p>
+              </div>
+              <div className="sy2-area-palette" aria-label={`Paleta Sypher ${division.name}`}>
+                {identityDetails[division.slug].palette.map((color) => (
+                  <span key={color}>
+                    <i style={{ backgroundColor: color }} />
+                    <small>{color.slice(1)}</small>
+                  </span>
+                ))}
+              </div>
+              <div className="sy2-area-footer">
+                <span>{division.keywords.join(' / ')}</span>
+                <HiArrowUpRight />
+              </div>
             </Link>
           </motion.div>
         ))}
@@ -194,6 +272,7 @@ function Footer() {
 export default function SypherHome() {
   return (
     <main className="sy2-site" id="top">
+      <Intro />
       <Header />
       <Hero />
       <About />
