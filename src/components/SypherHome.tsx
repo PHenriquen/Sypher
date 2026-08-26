@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
-import { divisions } from '../brand';
+import { divisions, projects } from '../brand';
 
 const reveal = {
   initial: { opacity: 0, y: 18 },
@@ -37,6 +37,7 @@ function Header() {
       <div className="sy2-header-inner">
         <Link href="/" className="sy2-wordmark">SYPHER</Link>
         <nav aria-label="Navegação principal">
+          <a href="#projects">Projetos</a>
           <a href="#areas">Áreas</a>
           <a href="#about">Sobre</a>
           <Link href="/brand">Identidade</Link>
@@ -125,11 +126,59 @@ function About() {
   );
 }
 
+
+function Projects() {
+  return (
+    <section className="sy2-projects" id="projects">
+      <div className="sy2-section-heading">
+        <span>02 / PROJETOS</span>
+        <div>
+          <h2>Projetos na prática</h2>
+          <p>Produtos, sistemas e experimentos que transformam as áreas da Sypher em trabalho real.</p>
+        </div>
+      </div>
+
+      <div className="sy2-project-grid">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.slug}
+            {...reveal}
+            transition={{ ...reveal.transition, delay: index * .05 }}
+          >
+            <Link
+              href={`/projects/${project.slug}`}
+              className="sy2-project-card"
+              style={accent(project.accent)}
+            >
+              <div className="sy2-project-top">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{project.status}</span>
+              </div>
+              <div className="sy2-project-art">
+                <span className="sy2-project-ring" />
+                <span className="sy2-project-axis axis-horizontal" />
+                <span className="sy2-project-axis axis-vertical" />
+                <img src={project.mark} alt={`Símbolo do projeto ${project.name}`} />
+              </div>
+              <div className="sy2-project-info">
+                <small>{project.category}</small>
+                <h3>{project.name}</h3>
+                <p>{project.tagline}</p>
+              </div>
+              <HiArrowUpRight className="sy2-project-arrow" />
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Areas() {
   return (
     <section className="sy2-areas" id="areas">
       <div className="sy2-section-heading">
-        <span>02 / ÁREAS</span>
+        <span>03 / ÁREAS</span>
         <div>
           <h2>Áreas com identidade própria</h2>
           <p>Cada área tem símbolo, paleta e linguagem visual próprios, mantendo a Sypher como marca principal.</p>
@@ -207,6 +256,7 @@ export default function SypherHome() {
       <Header />
       <Hero />
       <About />
+      <Projects />
       <Areas />
       <Footer />
     </main>
