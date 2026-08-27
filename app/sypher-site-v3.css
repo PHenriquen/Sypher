@@ -318,6 +318,109 @@
   border-top-color: rgba(255,255,255,.12);
 }
 
+.sy2-work {
+  position: relative;
+  padding: clamp(96px, 12vw, 176px) max(24px, calc((100vw - 1500px) / 2));
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.012), transparent 22%),
+    #060606;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+.sy2-project-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+.sy2-project-cell { grid-column: span 4; min-width: 0; }
+.sy2-project-cell:nth-child(4),
+.sy2-project-cell:nth-child(5) { grid-column: span 6; }
+.sy2-project-card {
+  min-height: 390px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 84% 12%, color-mix(in srgb, var(--sy2-accent) 12%, transparent), transparent 38%),
+    linear-gradient(160deg, #101010, #090909 68%);
+  box-shadow: inset 0 1px rgba(255,255,255,.035);
+  transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .25s ease, box-shadow .25s ease;
+}
+.sy2-project-card:hover {
+  transform: translateY(-7px);
+  border-color: color-mix(in srgb, var(--sy2-accent) 46%, rgba(255,255,255,.16));
+  box-shadow: 0 28px 80px rgba(0,0,0,.38), 0 0 54px color-mix(in srgb, var(--sy2-accent) 10%, transparent);
+}
+.sy2-project-top,
+.sy2-project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #777772;
+  font: 700 9px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.sy2-project-top span:last-child { color: color-mix(in srgb, var(--sy2-accent) 72%, #d7d7d1); }
+.sy2-project-identity {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 62px;
+}
+.sy2-project-identity img {
+  width: 72px;
+  height: 72px;
+  border-radius: 19px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.3);
+}
+.sy2-project-identity small {
+  color: var(--sy2-accent);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.sy2-project-identity h3 {
+  margin: 5px 0 0;
+  color: #f2f2ee;
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+.sy2-project-card > p {
+  max-width: 560px;
+  margin: 26px 0 34px;
+  color: #a5a59f;
+  font-size: 12px;
+  line-height: 1.72;
+}
+.sy2-project-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+.sy2-project-footer svg { color: var(--sy2-accent); transition: transform .22s ease; }
+.sy2-project-card:hover .sy2-project-footer svg { transform: translate(3px,-3px); }
+.sy2-work-note {
+  display: grid;
+  grid-template-columns: minmax(110px,.35fr) minmax(0,1.65fr);
+  gap: 32px;
+  margin-top: 52px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.sy2-work-note span {
+  color: #777772;
+  font: 700 9px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing: .12em;
+}
+.sy2-work-note p { max-width: 780px; margin: 0; color: #9d9d97; font-size: 12px; line-height: 1.7; }
+
 .sy2-after-hours {
   background:
     radial-gradient(circle at 22% 46%,rgba(124,77,255,.14),transparent 24rem),
@@ -421,6 +524,8 @@
   .sy2-satellite-4 { left: 4%; bottom: 8%; }
   .sy2-area-grid { gap: 12px; }
   .sy2-area-card { min-height: 500px; border-radius: 18px; }
+  .sy2-project-cell { grid-column: span 6; }
+  .sy2-project-cell:last-child { grid-column: 4 / span 6; }
 }
 
 @media (max-width: 640px) {
@@ -431,6 +536,11 @@
   .sy2-area-orbit { width: 230px; height: 118px; }
   .sy2-area-orbit-2 { width: 188px; height: 156px; }
   .sy2-area-palette small { display: none; }
+  .sy2-project-grid { display: block; }
+  .sy2-project-cell + .sy2-project-cell { margin-top: 12px; }
+  .sy2-project-card { min-height: 350px; padding: 21px; }
+  .sy2-project-identity { margin-top: 46px; }
+  .sy2-work-note { grid-template-columns: 1fr; gap: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -439,7 +549,8 @@
   .sy2-ah-orbit,
   .sy2-ah-logo-panel img { animation: none !important; }
   .sy2-area-card,
-  .sy2-area-logo-wrap img { transition-duration: .01ms !important; }
+  .sy2-area-logo-wrap img,
+  .sy2-project-card { transition-duration: .01ms !important; }
   .sy2-intro { display: none; }
   .sy2-hero-visual { animation: none !important; }
 }

@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
-import { divisions } from '../brand';
+import { divisions, projects } from '../brand';
 
 const reveal = {
   initial: { opacity: 0, y: 18 },
@@ -90,6 +90,7 @@ function Header() {
         <Link href="/" className="sy2-wordmark">SYPHER</Link>
         <nav aria-label="Navegação principal">
           <a href="#areas">Áreas</a>
+          <a href="#projetos">Projetos</a>
           <a href="#about">Sobre</a>
           <Link href="/brand">Identidade</Link>
         </nav>
@@ -249,6 +250,61 @@ function Areas() {
   );
 }
 
+function Work() {
+  return (
+    <section className="sy2-work" id="projetos">
+      <div className="sy2-section-heading">
+        <span>03 / EM CONSTRUÇÃO</span>
+        <div>
+          <h2>Projetos reais, estágios claros.</h2>
+          <p>
+            A Sypher começa pelo que já pode ser construído e demonstrado. Cada projeto abaixo mantém identidade própria e mostra seu estágio atual sem sugerir produtos, clientes ou equipes que ainda não existem.
+          </p>
+        </div>
+      </div>
+
+      <div className="sy2-project-grid">
+        {projects.map((project, index) => {
+          const division = divisions.find((item) => item.slug === project.divisionSlug);
+          return (
+            <motion.article
+              key={project.slug}
+              {...reveal}
+              transition={{ ...reveal.transition, delay: index * .045 }}
+              className="sy2-project-cell"
+              style={accent(project.accent)}
+            >
+              <Link href={`/projects/${project.slug}`} className="sy2-project-card">
+                <div className="sy2-project-top">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <span>{project.status}</span>
+                </div>
+                <div className="sy2-project-identity">
+                  <img src={project.mark} alt={`Símbolo de ${project.name}`} />
+                  <div>
+                    <small>Sypher {division?.name}</small>
+                    <h3>{project.name}</h3>
+                  </div>
+                </div>
+                <p>{project.tagline}</p>
+                <div className="sy2-project-footer">
+                  <span>{project.category}</span>
+                  <HiArrowUpRight aria-hidden="true" />
+                </div>
+              </Link>
+            </motion.article>
+          );
+        })}
+      </div>
+
+      <div className="sy2-work-note">
+        <span>AGORA</span>
+        <p>Software e produtos digitais sustentam a primeira fase. Hardware, sistemas e experiências interativas avançam como protótipos autorais até justificarem uma operação própria.</p>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="sy2-footer">
@@ -260,6 +316,7 @@ function Footer() {
         <span>© 2026 SYPHER</span>
         <div>
           <a href="#areas">Áreas</a>
+          <a href="#projetos">Projetos</a>
           <a href="#about">Sobre</a>
           <Link href="/brand">Identidade</Link>
           <a href="#top">Topo ↑</a>
@@ -277,6 +334,7 @@ export default function SypherHome() {
       <Hero />
       <About />
       <Areas />
+      <Work />
       <Footer />
     </main>
   );
