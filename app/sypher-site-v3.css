@@ -13,6 +13,27 @@
   background: var(--ink);
 }
 
+.sy2-skip-link {
+  position: fixed;
+  z-index: 1200;
+  left: 18px;
+  top: 14px;
+  padding: 10px 13px;
+  border-radius: 999px;
+  background: #f3f3ef;
+  color: #050505 !important;
+  font: 760 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+}
+.sy2-skip-link:focus { transform: translateY(0); }
+.sy2-site a:focus-visible {
+  outline: 2px solid #f3f3ef;
+  outline-offset: 5px;
+}
+
 .sy2-header-inner {
   min-height: 70px;
   background: rgba(5,5,5,.72);
@@ -23,6 +44,7 @@
 .sy2-wordmark { letter-spacing: .31em; }
 .sy2-header nav a { color: #8f8f8a; }
 .sy2-header-index { color: #e1e1dc; }
+.sy2-header-index:hover { color: #fff; }
 
 .sy2-hero {
   min-height: 100svh;
