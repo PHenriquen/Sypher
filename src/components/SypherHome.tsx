@@ -94,7 +94,7 @@ function Header() {
           <a href="#about">Sobre</a>
           <Link href="/brand">Identidade</Link>
         </nav>
-        <a className="sy2-header-index" href="#areas">EXPLORE ↓</a>
+        <Link className="sy2-header-index" href="/founder">FUNDADOR ↗</Link>
       </div>
     </header>
   );
@@ -319,6 +319,8 @@ function Footer() {
           <a href="#projetos">Projetos</a>
           <a href="#about">Sobre</a>
           <Link href="/brand">Identidade</Link>
+          <Link href="/founder">Fundador</Link>
+          <a href="https://website-kohl-six-11.vercel.app/" target="_blank" rel="noopener noreferrer">Portfólio ↗</a>
           <a href="#top">Topo ↑</a>
         </div>
       </div>
@@ -329,6 +331,7 @@ function Footer() {
 export default function SypherHome() {
   return (
     <main className="sy2-site" id="top">
+      <a className="sy2-skip-link" href="#about">Pular para o conteúdo</a>
       <Intro />
       <Header />
       <Hero />
