@@ -16,12 +16,22 @@ import "./sypher-site-v2.css";
 import "./sypher-site-v3.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sypher-delta.vercel.app"),
   title: {
     default: "Sypher — Tecnologia, Engenharia & Pesquisa",
     template: "%s — Sypher",
   },
   description:
     "A Sypher é uma empresa de tecnologia em formação, criando software, sistemas inteligentes, hardware e experiências interativas.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Sypher — Tecnologia, Engenharia & Pesquisa",
+    description: "Projetos próprios em software, inteligência artificial, produtos digitais, sistemas, hardware e experiências interativas.",
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+  },
+  robots: { index: true, follow: true },
 };
 
 const themeBoot = `
