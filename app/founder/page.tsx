@@ -28,7 +28,7 @@ export default function FounderPage() {
                   {link.label} ↗
                 </a>
               ))}
-              <Link className="button secondary" href="/after-hours">After Hours</Link>
+              <a className="button secondary" href={`${founderLinks.portfolio}#after-hours`}>After Hours ↗</a>
             </div>
           </div>
           <div className="founder-seal"><span>Fundador</span><strong>PN</strong><small>Pessoal / profissional</small></div>
@@ -38,7 +38,7 @@ export default function FounderPage() {
       <section className="section shell founder-boundary">
         <div><p className="section-index">Profissional</p><h2>Portfólio</h2><p>Carreira, habilidades técnicas, formação e trabalho profissional individual pertencem ao portfólio pessoal.</p></div>
         <div><p className="section-index">Empresa</p><h2>Sypher</h2><p>Divisões, produtos, pesquisa da empresa e a arquitetura de longo prazo pertencem aqui.</p></div>
-        <div><p className="section-index">Pessoal</p><h2>After Hours</h2><p>Desenhos, streaming, jogos e experimentos de conteúdo são hobbies pessoais e não produtos da empresa.</p></div>
+        <div><p className="section-index">Pessoal</p><h2>After Hours</h2><p>Desenhos, streaming, jogos e experimentos de conteúdo pertencem ao portfólio pessoal, fora deste site corporativo.</p></div>
       </section>
       <SiteFooter />
     </main>
