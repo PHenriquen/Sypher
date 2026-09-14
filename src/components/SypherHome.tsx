@@ -25,25 +25,6 @@ const identitySheets: Record<string, string> = {
   products: '/brand/identity-sheets/products.png',
 };
 
-const identityDetails: Record<string, { use: string; palette: string[] }> = {
-  intelligence: {
-    use: 'IA, assistentes e automação contextual',
-    palette: ['#07152B', '#0D1F3F', '#1E40FF', '#00D6FF', '#70E7FF'],
-  },
-  interactive: {
-    use: 'Jogos e experiências interativas',
-    palette: ['#1D1D1D', '#2B2B2B', '#FFD200', '#FFB800', '#E6E6E6'],
-  },
-  labs: {
-    use: 'Pesquisa, estudos técnicos e protótipos',
-    palette: ['#E53935', '#F44336', '#FF5252', '#FF8A80', '#B71C1C'],
-  },
-  products: {
-    use: 'SaaS, ferramentas e produtos digitais',
-    palette: ['#06301F', '#0E4D32', '#00C896', '#6DFFC1', '#B5FFDE'],
-  },
-};
-
 const letterReveal = {
   hidden: { y: '118%', opacity: 0, rotate: 3 },
   visible: (index: number) => ({
