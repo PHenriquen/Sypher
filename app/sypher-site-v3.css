@@ -576,3 +576,69 @@
   .sy2-intro { display: none; }
   .sy2-hero-visual { animation: none !important; }
 }
+
+
+/* Official Sypher identity sheets — render supplied artwork without cropping or distortion. */
+.sy2-area-grid { align-items: start; }
+.sy2-area-cell { align-self: start; }
+
+.sy2-area-card.sy2-area-sheet-card {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #050505;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 18px;
+  box-shadow: 0 18px 55px rgba(0,0,0,.24);
+  transform: translateZ(0);
+}
+
+.sy2-area-card.sy2-area-sheet-card::before,
+.sy2-area-card.sy2-area-sheet-card::after,
+.sy2-area-card.sy2-area-sheet-card .sy2-area-glow {
+  display: none;
+}
+
+.sy2-area-card.sy2-area-sheet-card:hover {
+  background: #050505;
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb,var(--sy2-accent) 42%,rgba(255,255,255,.18));
+  box-shadow:
+    0 28px 72px rgba(0,0,0,.34),
+    0 0 34px color-mix(in srgb,var(--sy2-accent) 8%,transparent);
+}
+
+.sy2-area-brand-sheet {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: none;
+  transform: none;
+  backface-visibility: hidden;
+}
+
+.sy2-area-sheet-card:hover .sy2-area-brand-sheet {
+  filter: none;
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  .sy2-area-card.sy2-area-sheet-card {
+    min-height: 0;
+    border-radius: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sy2-area-card.sy2-area-sheet-card,
+  .sy2-area-sheet-card:hover {
+    transform: none !important;
+  }
+}
