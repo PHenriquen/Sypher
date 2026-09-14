@@ -20,7 +20,6 @@ export function SiteFooter() {
             <span className="footer-v3-label">Empresa</span>
             <Link href="/brand">Sistema de marca</Link>
             <Link href="/founder">Fundador</Link>
-            <Link href="/after-hours">After Hours</Link>
           </div>
           <div>
             <span className="footer-v3-label">Conectar</span>

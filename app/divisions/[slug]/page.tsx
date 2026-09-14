@@ -159,7 +159,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
       </section>
 
       <div className="world-shell world-next">
-        <Link href="/#divisoes">← Todas as divisões</Link>
+        <Link href="/#areas">← Todas as áreas</Link>
         <Link href="/brand">Sistema de marca →</Link>
       </div>
       <SiteFooter />

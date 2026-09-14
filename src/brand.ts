@@ -147,7 +147,7 @@ export const projects: Project[] = [
     description:
       "Assistente local-first para Windows explorando voz, contexto, documentos, automação nativa controlada, permissões e modelos locais.",
     status: "Em desenvolvimento",
-    href: "https://github.com/PHenriquen/Noa",
+    href: "https://github.com/PHenriquen/Illume",
     mark: "/brand/projects/illume.svg",
     accent: "#00D6FF",
   },
@@ -198,7 +198,7 @@ export const projects: Project[] = [
     tagline: "Ritmo, memória e combate dentro de um mundo dark fantasy silencioso.",
     description:
       "Roguelite de ação rítmica em pré-produção, construído em torno de cadência, solidão, narrativa em camadas e um loop de combate rejogável de alta habilidade.",
-    status: "Pré-produção",
+    status: "Protótipo jogável",
     href: "https://github.com/PHenriquen/Game-R-quiem",
     mark: "/brand/projects/requiem.svg",
     accent: "#C64659",
