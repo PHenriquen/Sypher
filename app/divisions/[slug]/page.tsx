@@ -81,6 +81,32 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
     <main className={`division-world division-${division.slug}`} style={style}>
       <SiteHeader />
 
+      <nav className="world-division-rail" aria-label="Explorar divisões da Sypher">
+        <div className="world-shell world-division-rail-inner">
+          <span className="world-division-rail-label">Mapa de divisões</span>
+          <div className="world-division-rail-links">
+            {divisions.map((item, index) => {
+              const isCurrent = item.slug === division.slug;
+              const itemStyle = { "--rail-accent": item.color } as CSSProperties;
+
+              return (
+                <Link
+                  key={item.slug}
+                  href={`/divisions/${item.slug}`}
+                  className={`world-division-link${isCurrent ? " is-current" : ""}`}
+                  style={itemStyle}
+                  aria-current={isCurrent ? "page" : undefined}
+                >
+                  <i aria-hidden="true" />
+                  <span>{item.name}</span>
+                  <small>0{index + 1}</small>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
+
       <section className="world-hero">
         <div className="world-shell world-hero-grid">
           <div>
@@ -159,7 +185,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
       </section>
 
       <div className="world-shell world-next">
-        <Link href="/#divisoes">← Todas as divisões</Link>
+        <Link href="/#areas">← Todas as áreas</Link>
         <Link href="/brand">Sistema de marca →</Link>
       </div>
       <SiteFooter />

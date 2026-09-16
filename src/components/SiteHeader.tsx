@@ -10,11 +10,10 @@ export function SiteHeader() {
       </Link>
       <div className="site-header-right">
         <nav aria-label="Navegação principal">
-          <Link href="/#divisoes">Divisões</Link>
+          <Link href="/#areas">Áreas</Link>
           <Link href="/#projetos">Projetos</Link>
           <Link href="/brand">Marca</Link>
           <Link href="/founder">Fundador</Link>
-          <Link href="/after-hours">After Hours</Link>
         </nav>
         <span className="header-status"><i /> Em formação</span>
         <ThemeToggle compact />

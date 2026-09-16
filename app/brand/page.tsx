@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { divisions, projects } from "../../src/brand";
+import { divisions, founderLinks, projects } from "../../src/brand";
 import { IdentityMark } from "../../src/components/IdentityMark";
 import { SiteFooter } from "../../src/components/SiteFooter";
 import { SiteHeader } from "../../src/components/SiteHeader";
@@ -60,10 +60,10 @@ export default function BrandPage() {
           <p className="section-index">03 / Identidade pessoal</p>
           <div><h2>After Hours fica fora das divisões da empresa.</h2><p className="section-copy">Roxo é reservado ao espaço pessoal do fundador. A identidade pode ser mais expressiva sem fazer streaming, arte ou experimentos de conteúdo parecerem produtos da Sypher.</p></div>
         </div>
-        <Link className="after-hours-brand-card" href="/after-hours" style={accentStyle("#7C4DFF")}>
+        <a className="after-hours-brand-card" href={`${founderLinks.portfolio}#after-hours`} style={accentStyle("#7C4DFF")}>
           <IdentityMark src="/brand/after-hours.svg" alt="Símbolo After Hours" size="md" />
-          <div><span>Pessoal / fora da empresa</span><strong>After Hours</strong><p>Arte · Streaming · Experimentos de creator</p></div>
-        </Link>
+          <div><span>Portfólio pessoal ↗</span><strong>After Hours</strong><p>Arte · Streaming · Experimentos de creator</p></div>
+        </a>
       </section>
 
       <section className="section shell">
