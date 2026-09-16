@@ -66,6 +66,7 @@
   text-shadow: 0 24px 90px rgba(0,0,0,.52);
   overflow: hidden;
   white-space: nowrap;
+  pointer-events: none;
 }
 .sy2-hero h1 span { display: inline-block; transform-origin: 50% 100%; }
 
@@ -134,14 +135,57 @@
   width: 44px;
   height: 44px;
   padding: 6px;
+  display: grid;
+  place-items: center;
   border: 1px solid color-mix(in srgb,var(--sy2-accent) 48%,rgba(255,255,255,.1));
   border-radius: 13px;
   background: color-mix(in srgb,var(--sy2-accent) 9%,rgba(8,8,8,.93));
   box-shadow: 0 0 38px color-mix(in srgb,var(--sy2-accent) 18%,transparent);
   backdrop-filter: blur(10px);
   animation: sy2-satellite-float 6.5s ease-in-out infinite;
+  transition: border-color .22s ease, background-color .22s ease, box-shadow .22s ease;
 }
 .sy2-satellite img { width: 100%; height: 100%; object-fit: contain; border-radius: 9px; }
+.sy2-satellite:hover,
+.sy2-satellite:focus-visible {
+  border-color: color-mix(in srgb,var(--sy2-accent) 78%,white 12%);
+  background: color-mix(in srgb,var(--sy2-accent) 16%,rgba(8,8,8,.94));
+  box-shadow: 0 0 52px color-mix(in srgb,var(--sy2-accent) 28%,transparent);
+}
+.sy2-satellite:focus-visible {
+  outline: 2px solid color-mix(in srgb,var(--sy2-accent) 72%,white 20%);
+  outline-offset: 4px;
+}
+.sy2-satellite-label {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  padding: 7px 9px;
+  border: 1px solid color-mix(in srgb,var(--sy2-accent) 34%,rgba(255,255,255,.1));
+  border-radius: 999px;
+  background: rgba(7,7,7,.82);
+  box-shadow: 0 10px 34px rgba(0,0,0,.3);
+  color: color-mix(in srgb,var(--sy2-accent) 60%,#f3f3ef);
+  font: 760 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(5px,-50%);
+  transition: opacity .2s ease, transform .26s cubic-bezier(.16,1,.3,1);
+}
+.sy2-satellite-2 .sy2-satellite-label,
+.sy2-satellite-3 .sy2-satellite-label {
+  left: auto;
+  right: calc(100% + 10px);
+  transform: translate(-5px,-50%);
+}
+.sy2-satellite:hover .sy2-satellite-label,
+.sy2-satellite:focus-visible .sy2-satellite-label {
+  opacity: 1;
+  transform: translate(0,-50%);
+}
 .sy2-satellite-1 { left: 1%; top: 18%; animation-delay: -.8s; }
 .sy2-satellite-2 { right: 5%; top: 12%; animation-delay: -2.2s; }
 .sy2-satellite-3 { right: 1%; bottom: 16%; animation-delay: -3.4s; }

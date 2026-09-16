@@ -95,25 +95,27 @@ function HeroVisual() {
       initial={{ opacity: 0, scale: .82, rotate: -4 }}
       animate={{ opacity: 1, scale: 1, rotate: 0 }}
       transition={{ delay: .38, duration: 1.25, ease: [0.16, 1, 0.3, 1] }}
-      aria-hidden="true"
     >
-      <div className="sy2-noise-orb orb-one" />
-      <div className="sy2-noise-orb orb-two" />
-      <div className="sy2-orbit orbit-one" />
-      <div className="sy2-orbit orbit-two" />
-      <span className="sy2-cross cross-x" />
-      <span className="sy2-cross cross-y" />
-      <span className="sy2-spark spark-a">✦</span>
-      <span className="sy2-spark spark-b">✦</span>
-      <SypherMark className="sy2-hero-mark" />
+      <div className="sy2-noise-orb orb-one" aria-hidden="true" />
+      <div className="sy2-noise-orb orb-two" aria-hidden="true" />
+      <div className="sy2-orbit orbit-one" aria-hidden="true" />
+      <div className="sy2-orbit orbit-two" aria-hidden="true" />
+      <span className="sy2-cross cross-x" aria-hidden="true" />
+      <span className="sy2-cross cross-y" aria-hidden="true" />
+      <span className="sy2-spark spark-a" aria-hidden="true">✦</span>
+      <span className="sy2-spark spark-b" aria-hidden="true">✦</span>
+      <div aria-hidden="true"><SypherMark className="sy2-hero-mark" /></div>
       {activeIdentities.map((division, index) => (
-        <span
+        <Link
           key={division.slug}
+          href={`/divisions/${division.slug}`}
           className={`sy2-satellite sy2-satellite-${index + 1}`}
           style={accent(division.color)}
+          aria-label={`Conhecer Sypher ${division.name}`}
         >
           <img src={division.mark} alt="" />
-        </span>
+          <span className="sy2-satellite-label">{division.name}</span>
+        </Link>
       ))}
     </motion.div>
   );
