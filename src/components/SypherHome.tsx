@@ -2,15 +2,15 @@
 
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { MotionConfig, motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
 import { divisions, projects } from '../brand';
 
 const reveal = {
-  initial: { opacity: 0, y: 18 },
+  initial: { opacity: 1, y: 12 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-70px' },
-  transition: { duration: 0.56, ease: [0.16, 1, 0.3, 1] as const },
+  viewport: { once: true, amount: 0.12 },
+  transition: { duration: 0.48, ease: [0.16, 1, 0.3, 1] as const },
 };
 
 const identitySlugs = ['intelligence', 'interactive', 'labs', 'products'];
@@ -298,15 +298,17 @@ function Footer() {
 
 export default function SypherHome() {
   return (
-    <main className="sy2-site" id="top">
-      <a className="sy2-skip-link" href="#about">Pular para o conteúdo</a>
-      <Intro />
-      <Header />
-      <Hero />
-      <About />
-      <Areas />
-      <Work />
-      <Footer />
-    </main>
+    <MotionConfig reducedMotion="user">
+      <main className="sy2-site" id="top">
+        <a className="sy2-skip-link" href="#about">Pular para o conteúdo</a>
+        <Intro />
+        <Header />
+        <Hero />
+        <About />
+        <Areas />
+        <Work />
+        <Footer />
+      </main>
+    </MotionConfig>
   );
 }
