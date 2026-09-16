@@ -49,15 +49,27 @@
 .sy2-hero {
   min-height: 100svh;
   background:
-    radial-gradient(circle at 50% 45%, rgba(255,255,255,.07), transparent 19rem),
-    radial-gradient(circle at 28% 30%, rgba(255,255,255,.025), transparent 22rem),
+    radial-gradient(ellipse 34rem 28rem at 17% 34%, rgba(0,214,255,.052), transparent 68%),
+    radial-gradient(ellipse 31rem 25rem at 84% 31%, rgba(255,210,0,.043), transparent 69%),
+    radial-gradient(ellipse 32rem 27rem at 80% 78%, rgba(229,57,53,.042), transparent 70%),
+    radial-gradient(ellipse 29rem 24rem at 18% 78%, rgba(0,200,150,.038), transparent 72%),
+    radial-gradient(circle at 50% 45%, rgba(255,255,255,.085), transparent 19rem),
+    radial-gradient(circle at 28% 30%, rgba(255,255,255,.028), transparent 22rem),
     linear-gradient(180deg,#050505 0%,#070707 56%,#090909 100%);
 }
 
 .sy2-hero::before {
-  opacity: .16;
-  background-size: 96px 96px;
-  mask-image: radial-gradient(circle at 50% 48%, black 0 24%, transparent 76%);
+  inset: -7%;
+  opacity: .22;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    radial-gradient(rgba(255,255,255,.7) .65px,transparent .8px);
+  background-position: 0 0, 0 0, 11px 13px;
+  background-size: 96px 96px, 96px 96px, 23px 23px;
+  mask-image: radial-gradient(ellipse 68% 76% at 50% 48%,black 8%,rgba(0,0,0,.82) 55%,transparent 100%);
+  animation: sy2-field-drift 22s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .sy2-hero h1 {
@@ -77,7 +89,9 @@
 
 .sy2-hero-visual {
   width: clamp(330px,39vw,690px);
-  filter: drop-shadow(0 34px 70px rgba(0,0,0,.4));
+  filter:
+    drop-shadow(0 34px 70px rgba(0,0,0,.4))
+    drop-shadow(0 0 82px rgba(255,255,255,.055));
   animation: sy2-hero-drift 9s ease-in-out 1.7s infinite;
 }
 
@@ -569,6 +583,10 @@
   0%,100% { translate: 0 0; }
   50% { translate: 0 -10px; }
 }
+@keyframes sy2-field-drift {
+  0%,100% { transform: translate3d(-.8%,.2%,0) scale(1.015); opacity: .18; }
+  50% { transform: translate3d(.8%,-.7%,0) scale(1.035); opacity: .25; }
+}
 @keyframes sy2-area-spin {
   from { transform: rotate(-18deg); }
   to { transform: rotate(342deg); }
@@ -610,6 +628,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .sy2-hero::before,
   .sy2-satellite,
   .sy2-area-orbit,
   .sy2-ah-orbit,
