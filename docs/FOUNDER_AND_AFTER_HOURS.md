@@ -1,6 +1,6 @@
 # Founder and After Hours
 
-Sypher can acknowledge the founder's broader creative identity without treating personal hobbies as company output.
+Zypher can acknowledge the founder's broader creative identity without treating personal hobbies as company output.
 
 ## Founder links
 
@@ -10,7 +10,7 @@ The corporate site may link to the founder's professional presence:
 - GitHub;
 - LinkedIn.
 
-These links belong on the Founder page and in the footer. They are not Sypher products.
+These links belong on the Founder page and in the footer. They are not Zypher products.
 
 ## After Hours
 
@@ -22,7 +22,7 @@ These links belong on the Founder page and in the footer. They are not Sypher pr
 - personal game/media hobbies;
 - other creative experiments.
 
-Every After Hours surface must make the boundary explicit: this content is personal and is not a Sypher division, product, client engagement or R&D program.
+Every After Hours surface must make the boundary explicit: this content is personal and is not a Zypher division, product, client engagement or R&D program.
 
 ## Social-network rule
 
