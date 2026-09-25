@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="footer-v3-brand">
           <div className="brand-lockup compact">
             <img src="/brand/sypher.svg" alt="" aria-hidden="true" />
-            <span>SYPHER</span>
+            <span>ZYPHER</span>
           </div>
           <p>Tecnologia, engenharia e pesquisa aplicada construídas em torno de produtos próprios.</p>
           <span className="footer-v3-status"><i /> Empresa em formação</span>
@@ -33,7 +33,7 @@ export function SiteFooter() {
 
       <div className="footer-v3-bottom">
         <span>Tecnologia · Engenharia · Pesquisa</span>
-        <span>Sypher</span>
+        <span>Zypher</span>
       </div>
     </footer>
   );
