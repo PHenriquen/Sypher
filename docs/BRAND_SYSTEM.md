@@ -1,23 +1,23 @@
-# Sypher brand system — v1 working foundation
+# Zypher brand system — v1 working foundation
 
-This document defines the brand architecture, visual grammar and endorsement rules for the current Sypher working identity. The architecture is intentionally more durable than the parent name: if the parent name changes, the division logic, project lineage and most design tokens should survive.
+This document defines the brand architecture, visual grammar and endorsement rules for the current Zypher working identity. The architecture is intentionally more durable than the parent name: if the parent name changes, the division logic, project lineage and most design tokens should survive.
 
 ## 1. Brand architecture
 
-Sypher is the parent brand. It is not a software house category and it should not be visually trapped inside AI, industrial automation, gaming or hardware. The parent identity stays neutral and the divisions carry domain-specific expression.
+Zypher is the parent brand. It is not a software house category and it should not be visually trapped inside AI, industrial automation, gaming or hardware. The parent identity stays neutral and the divisions carry domain-specific expression.
 
 ### Active divisions
 
-- **Sypher Labs** — research, prototypes and experimental R&D.
-- **Sypher Intelligence** — AI, assistants, agents and intelligent automation.
-- **Sypher Products** — SaaS and general digital products.
-- **Sypher Systems** — industrial and operational software.
-- **Sypher Engineering** — hardware, IoT, embedded and physical systems.
-- **Sypher Interactive** — games and digital experiences.
+- **Zypher Labs** — research, prototypes and experimental R&D.
+- **Zypher Intelligence** — AI, assistants, agents and intelligent automation.
+- **Zypher Products** — SaaS and general digital products.
+- **Zypher Systems** — industrial and operational software.
+- **Zypher Engineering** — hardware, IoT, embedded and physical systems.
+- **Zypher Interactive** — games and digital experiences.
 
 ### Reserved structure
 
-**Sypher Group** is reserved for a future holding/conglomerate structure. It should not be used while Sypher is one operating company with internal divisions. Using “Group” too early makes the company look larger on paper than it is in reality.
+**Zypher Group** is reserved for a future holding/conglomerate structure. It should not be used while Zypher is one operating company with internal divisions. Using “Group” too early makes the company look larger on paper than it is in reality.
 
 ## 2. Product lineage
 
@@ -63,11 +63,11 @@ The six division colors can appear together only as a spectrum/accent system, no
 
 ### Wordmark
 
-Until a custom wordmark is drawn, use **SYPHER** in uppercase with generous tracking. Do not stylize individual letters in random ways. The symbol carries the distinctive geometry; the temporary wordmark should remain restrained.
+Until a custom wordmark is drawn, use **ZYPHER** in uppercase with generous tracking. Do not stylize individual letters in random ways. The symbol carries the distinctive geometry; the temporary wordmark should remain restrained.
 
 ## 5. Division identities
 
-### Sypher Labs
+### Zypher Labs
 
 - Signature: `#8C6BFF`
 - Mark: **Specimen Frame**
@@ -75,7 +75,7 @@ Until a custom wordmark is drawn, use **SYPHER** in uppercase with generous trac
 - Visual behavior: grids, annotations, coordinates, incomplete diagrams, experimental states.
 - Avoid: making Labs look like a generic “science atom” logo.
 
-### Sypher Intelligence
+### Zypher Intelligence
 
 - Signature: `#43D7FF`
 - Mark: **Core Lens**
@@ -83,7 +83,7 @@ Until a custom wordmark is drawn, use **SYPHER** in uppercase with generous trac
 - Visual behavior: controlled luminosity, focus, context layers, calm movement.
 - Avoid: generic stars, brains and assistant chat bubbles.
 
-### Sypher Products
+### Zypher Products
 
 - Signature: `#38D6A4`
 - Mark: **Module Field**
@@ -91,7 +91,7 @@ Until a custom wordmark is drawn, use **SYPHER** in uppercase with generous trac
 - Visual behavior: clean surfaces, product screenshots, whitespace, modular information.
 - Avoid: overly futuristic UI that makes normal software feel inaccessible.
 
-### Sypher Systems
+### Zypher Systems
 
 - Signature: `#3F73FF`
 - Mark: **Signal Rail**
@@ -99,7 +99,7 @@ Until a custom wordmark is drawn, use **SYPHER** in uppercase with generous trac
 - Visual behavior: telemetry, data density, status signals, time-series language.
 - Avoid: factory clichés, gears and generic dashboard iconography as the main identity.
 
-### Sypher Engineering
+### Zypher Engineering
 
 - Signature: `#E99A55`
 - Mark: **Interlock**
@@ -107,7 +107,7 @@ Until a custom wordmark is drawn, use **SYPHER** in uppercase with generous trac
 - Visual behavior: material photography, exploded diagrams, measurements, hardware surfaces.
 - Avoid: turning the entire division into an “industrial orange” construction brand.
 
-### Sypher Interactive
+### Zypher Interactive
 
 - Signature: `#E05268`
 - Mark: **Echo Gate**
@@ -121,13 +121,13 @@ Products do **not** reuse the division logo with a different name. Each product 
 
 The relationship is shown through endorsement:
 
-- `Illume — Sypher Intelligence`
-- `Nodi — Sypher Products`
-- `SincroHub — Sypher Systems`
-- `Manopla Inteligente — Sypher Engineering`
-- `Réquiem — Sypher Interactive`
+- `Illume — Zypher Intelligence`
+- `Nodi — Zypher Products`
+- `SincroHub — Zypher Systems`
+- `Manopla Inteligente — Zypher Engineering`
+- `Réquiem — Zypher Interactive`
 
-For marketing copy, “by Sypher” is acceptable when the division would add clutter. For technical or portfolio contexts, prefer the full division lineage.
+For marketing copy, “by Zypher” is acceptable when the division would add clutter. For technical or portfolio contexts, prefer the full division lineage.
 
 ### Current project marks
 
@@ -149,7 +149,7 @@ Interactive can later adopt an authored display face for game presentation while
 
 ## 8. Tone of voice
 
-Sypher should sound like a company that builds, tests and learns — not a futuristic corporation pretending to already be enormous.
+Zypher should sound like a company that builds, tests and learns — not a futuristic corporation pretending to already be enormous.
 
 Prefer:
 
@@ -168,7 +168,7 @@ Avoid:
 
 ## 9. Founder and After Hours
 
-The founder identity is connected to Sypher but is not a division. Personal art, streaming, YouTube and creator experiments belong under **After Hours**, explicitly labeled as personal and non-company work.
+The founder identity is connected to Zypher but is not a division. Personal art, streaming, YouTube and creator experiments belong under **After Hours**, explicitly labeled as personal and non-company work.
 
 This protects both sides:
 
@@ -189,7 +189,7 @@ This protects both sides:
 ### Still open
 
 - final legal/market-cleared parent name;
-- final custom Sypher wordmark;
+- final custom Zypher wordmark;
 - final master vector for Illume;
 - future product marks after each product has enough maturity;
 - legal trademark/domain decisions.
