@@ -1,4 +1,4 @@
-# Sypher identity assets
+# Zypher identity assets
 
 This folder is the source of truth for the working brand system.
 
