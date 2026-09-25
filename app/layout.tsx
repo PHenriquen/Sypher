@@ -14,11 +14,11 @@ import "./sypher-theme.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sypher — Tecnologia, Engenharia & Pesquisa",
-    template: "%s — Sypher",
+    default: "Zypher — Tecnologia, Engenharia & Pesquisa",
+    template: "%s — Zypher",
   },
   description:
-    "A Sypher é uma empresa de tecnologia em formação, criando software, sistemas inteligentes, hardware e experiências interativas.",
+    "A Zypher é uma empresa de tecnologia em formação, criando software, sistemas inteligentes, hardware e experiências interativas.",
 };
 
 const themeBoot = `
