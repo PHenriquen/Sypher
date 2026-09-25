@@ -12,6 +12,6 @@ The name is derived from dexterity / dexter: hand skill, precision and controlle
 
 Provisional lockup:
 
-**DEXTR — Sypher Engineering**
+**DEXTR — Zypher Engineering**
 
 The GitHub repository is not renamed yet. Do not change package identifiers, URLs or historical references until the working name is explicitly approved and checked for naming/trademark conflicts.
