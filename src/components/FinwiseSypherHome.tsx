@@ -40,10 +40,10 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
       <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-black/[0.07] bg-white/90 px-4 py-3 shadow-[0_12px_45px_rgba(20,24,32,.07)] backdrop-blur-xl md:px-5">
-        <Link href="/" className="flex items-center gap-3" aria-label="Página inicial da Sypher">
+        <Link href="/" className="flex items-center gap-3" aria-label="Página inicial da Zypher">
           <BrandMark src="/brand/sypher.svg" alt="" className="h-8 w-8 rounded-lg" />
           <div className="flex flex-col leading-none">
-            <span className="text-[13px] font-extrabold tracking-[.24em] text-[#111216]">SYPHER</span>
+            <span className="text-[13px] font-extrabold tracking-[.24em] text-[#111216]">ZYPHER</span>
             <span className="mt-1 text-[8px] uppercase tracking-[.17em] text-[#90949c]">Tecnologia · Engenharia · Pesquisa</span>
           </div>
         </Link>
@@ -131,7 +131,7 @@ function Hero() {
                 {divisions.map((division) => (
                   <Link key={division.slug} href={`/divisions/${division.slug}`} className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-white hover:shadow-sm">
                     <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-xl" style={{ background: rgba(division.color, .10) }}>
-                      <BrandMark src={division.mark} alt={`Símbolo da Sypher ${division.name}`} className="h-8 w-8" />
+                      <BrandMark src={division.mark} alt={`Símbolo da Zypher ${division.name}`} className="h-8 w-8" />
                     </span>
                     <span className="text-[11px] font-semibold text-[#41454c]">{division.name}</span>
                   </Link>
@@ -146,10 +146,10 @@ function Hero() {
                   <span className="text-[9px] font-bold uppercase tracking-[.18em] text-[#9aa0aa]">Marca-mãe</span>
                   <div className="mt-5 flex items-center gap-5">
                     <div className="grid h-24 w-24 place-items-center rounded-3xl bg-[#111216] shadow-[0_18px_45px_rgba(17,18,22,.20)] md:h-28 md:w-28">
-                      <BrandMark src="/brand/sypher.svg" alt="Sypher" className="h-20 w-20 md:h-24 md:w-24" />
+                      <BrandMark src="/brand/sypher.svg" alt="Zypher" className="h-20 w-20 md:h-24 md:w-24" />
                     </div>
                     <div className="text-left">
-                      <p className="text-[11px] font-bold uppercase tracking-[.22em] text-[#111216]">Sypher</p>
+                      <p className="text-[11px] font-bold uppercase tracking-[.22em] text-[#111216]">Zypher</p>
                       <p className="mt-2 max-w-xs text-[12px] leading-5 text-[#747982]">Uma marca central. Divisões com personalidade própria. Produtos com autonomia visual.</p>
                     </div>
                   </div>
@@ -199,7 +199,7 @@ function DivisionRail() {
         {divisions.map((division) => (
           <Link key={division.slug} href={`/divisions/${division.slug}`} className="group flex min-h-36 flex-col items-center justify-center gap-3 px-3 py-6 text-center transition hover:bg-[#fafafb]">
             <span className="grid h-16 w-16 place-items-center overflow-hidden rounded-2xl transition group-hover:-translate-y-1 group-hover:shadow-card" style={{ background: rgba(division.color, .09) }}>
-              <BrandMark src={division.mark} alt={`Logo Sypher ${division.name}`} className="h-14 w-14" />
+              <BrandMark src={division.mark} alt={`Logo Zypher ${division.name}`} className="h-14 w-14" />
             </span>
             <span className="text-[10px] font-bold uppercase tracking-[.12em] text-[#5d626b]">{division.name}</span>
           </Link>
@@ -221,7 +221,7 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
 function DivisionStories() {
   return (
     <section className="bg-[#f7f8fa] px-5 py-24 md:py-32">
-      <SectionHeading eyebrow="01 / Arquitetura" title="Cada divisão deve parecer um mundo próprio." description="A família visual vem da disciplina da Sypher. A personalidade vem de cor, tipografia, textura, ritmo e comportamento específicos para cada domínio." />
+      <SectionHeading eyebrow="01 / Arquitetura" title="Cada divisão deve parecer um mundo próprio." description="A família visual vem da disciplina da Zypher. A personalidade vem de cor, tipografia, textura, ritmo e comportamento específicos para cada domínio." />
       <div className="mx-auto max-w-6xl space-y-5">
         {divisions.map((division, index) => (
           <motion.div key={division.slug} {...reveal}>
@@ -234,7 +234,7 @@ function DivisionStories() {
                 <div className="division-preview-grid absolute inset-0" />
                 <div className="division-preview-orbit absolute h-52 w-52 rounded-full border" style={{ borderColor: rgba(division.color, .18) }} />
                 <div className="division-preview-mark relative z-10 grid h-36 w-36 place-items-center rounded-[34px] border bg-white shadow-[0_30px_70px_rgba(0,0,0,.12)]" style={{ borderColor: rgba(division.color, .18), background: division.slug === 'interactive' ? '#fff' : rgba(division.color, .045) }}>
-                  <BrandMark src={division.mark} alt={`Símbolo da Sypher ${division.name}`} className="h-28 w-28" />
+                  <BrandMark src={division.mark} alt={`Símbolo da Zypher ${division.name}`} className="h-28 w-28" />
                 </div>
               </div>
             </Link>
