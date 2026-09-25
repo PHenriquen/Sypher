@@ -1,19 +1,19 @@
-# Sypher
+# Zypher
 
-Official website and brand hub for the **working Sypher parent identity**.
+Official website and brand hub for the **working Zypher parent identity**.
 
 The project is being built as a durable company architecture: one parent brand, clear divisions and individual products that keep their own identities. The division system is intentionally designed so it can survive a future parent-name change if legal/market clearance requires one.
 
 ## Brand architecture
 
-- **Sypher Labs** — research, prototypes and experimental R&D
-- **Sypher Intelligence** — AI and intelligent automation
-- **Sypher Products** — SaaS and digital products
-- **Sypher Systems** — industrial and operational software
-- **Sypher Engineering** — hardware, IoT and physical computing
-- **Sypher Interactive** — games and digital experiences
+- **Zypher Labs** — research, prototypes and experimental R&D
+- **Zypher Intelligence** — AI and intelligent automation
+- **Zypher Products** — SaaS and digital products
+- **Zypher Systems** — industrial and operational software
+- **Zypher Engineering** — hardware, IoT and physical computing
+- **Zypher Interactive** — games and digital experiences
 
-`Sypher Group` is reserved for a future real group/holding structure and is not an active division.
+`Zypher Group` is reserved for a future real group/holding structure and is not an active division.
 
 ## Current lineage
 
