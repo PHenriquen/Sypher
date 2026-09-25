@@ -27,11 +27,11 @@ export type Project = {
 };
 
 export const company = {
-  name: "Sypher",
+  name: "Zypher",
   strapline: "Tecnologia · Engenharia · Pesquisa",
   headline: "Construir sistemas. Criar produtos. Explorar além do software.",
   description:
-    "A Sypher é uma empresa de tecnologia em formação, construída em torno de produtos próprios, pesquisa aplicada e da conexão entre software e o mundo físico.",
+    "A Zypher é uma empresa de tecnologia em formação, construída em torno de produtos próprios, pesquisa aplicada e da conexão entre software e o mundo físico.",
   principle:
     "Uma marca-mãe. Disciplinas distintas. Cada produto mantém sua personalidade enquanto herda um padrão comum de engenharia, clareza e experimentação.",
 };
