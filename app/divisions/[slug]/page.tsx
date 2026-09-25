@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const division = getDivision(slug);
-  return { title: division ? `Sypher ${division.name}` : "Divisão" };
+  return { title: division ? `Zypher ${division.name}` : "Divisão" };
 }
 
 const narratives: Record<string, { art: string; principles: Array<[string, string]> }> = {
@@ -93,9 +93,9 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
 
-          <div className="world-art" aria-label={`Identidade visual da Sypher ${division.name}`}>
+          <div className="world-art" aria-label={`Identidade visual da Zypher ${division.name}`}>
             <div className="world-mark-stage">
-              <IdentityMark src={division.mark} alt={`Símbolo da Sypher ${division.name}`} size="lg" />
+              <IdentityMark src={division.mark} alt={`Símbolo da Zypher ${division.name}`} size="lg" />
             </div>
             <div className="world-art-label"><span>{narrative.art}</span><strong>{division.markName}</strong></div>
           </div>
