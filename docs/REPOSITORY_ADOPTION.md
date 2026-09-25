@@ -9,13 +9,13 @@ The goal is lightweight endorsement, not turning every repository into a copy of
 Place the endorsement after the project title and one-line product description, never above the product name.
 
 ```md
-> **Lineage:** Sypher <Division> · <Category>
+> **Lineage:** Zypher <Division> · <Category>
 ```
 
 Optional corporate link:
 
 ```md
-Part of the [Sypher](https://github.com/PHenriquen/Sypher) product family.
+Part of the [Zypher](https://github.com/PHenriquen/Zypher) product family.
 ```
 
 Do not add the parent logo as a giant README hero. Product identity stays dominant.
@@ -25,13 +25,13 @@ Do not add the parent logo as a giant README hero. Product identity stays domina
 - Division: **Intelligence**
 - Category: AI Assistant
 - Keep: existing approved reactor/core identity as master.
-- Add later: small `Sypher Intelligence` endorsement near status/architecture information.
+- Add later: small `Zypher Intelligence` endorsement near status/architecture information.
 - Do not rename compatibility-sensitive Noa/TRACE internals as part of branding alone.
 
 Suggested README line:
 
 ```md
-> **Lineage:** Sypher Intelligence · Local AI Assistant
+> **Lineage:** Zypher Intelligence · Local AI Assistant
 ```
 
 ## Nodi
@@ -44,7 +44,7 @@ Suggested README line:
 Suggested README line:
 
 ```md
-> **Lineage:** Sypher Products · SaaS
+> **Lineage:** Zypher Products · SaaS
 ```
 
 ## SincroHub
@@ -57,7 +57,7 @@ Suggested README line:
 Suggested README line:
 
 ```md
-> **Lineage:** Sypher Systems · Industrial Platform
+> **Lineage:** Zypher Systems · Industrial Platform
 ```
 
 ## Manopla Inteligente
@@ -70,7 +70,7 @@ Suggested README line:
 Suggested README line:
 
 ```md
-> **Lineage:** Sypher Engineering · Embedded / Physical Computing
+> **Lineage:** Zypher Engineering · Embedded / Physical Computing
 ```
 
 ## Réquiem
@@ -83,7 +83,7 @@ Suggested README line:
 Suggested README line:
 
 ```md
-> **Lineage:** Sypher Interactive · Game
+> **Lineage:** Zypher Interactive · Game
 ```
 
 ## GitHub topics
