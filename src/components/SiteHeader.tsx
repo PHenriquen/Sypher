@@ -4,9 +4,9 @@ import { ThemeToggle } from "./ThemeToggle";
 export function SiteHeader() {
   return (
     <header className="site-header shell">
-      <Link className="brand-lockup" href="/" aria-label="Página inicial da Sypher">
+      <Link className="brand-lockup" href="/" aria-label="Página inicial da Zypher">
         <img src="/brand/sypher.svg" alt="" aria-hidden="true" />
-        <span>SYPHER</span>
+        <span>ZYPHER</span>
       </Link>
       <div className="site-header-right">
         <nav aria-label="Navegação principal">
