@@ -23,14 +23,14 @@ export default function BrandPage() {
             <h1>Relacionadas por regras.<br />Não por repetição.</h1>
             <p>A identidade principal permanece monocromática e corporativa. Cada divisão possui cor, símbolo, tipografia e comportamento visual próprios. Os produtos continuam reconhecíveis sozinhos.</p>
           </div>
-          <IdentityMark src="/brand/sypher.svg" alt="Símbolo principal da Sypher" size="lg" />
+          <IdentityMark src="/brand/sypher.svg" alt="Símbolo principal da Zypher" size="lg" />
         </div>
       </section>
 
       <section className="section shell">
         <div className="section-heading">
           <p className="section-index">01 / Marca-mãe</p>
-          <div><h2>Sypher</h2><p className="section-copy">A marca principal continua geométrica, neutra e corporativa para que a empresa possa crescer por software, IA, hardware, pesquisa e experiências interativas sem ficar visualmente presa a uma área.</p></div>
+          <div><h2>Zypher</h2><p className="section-copy">A marca principal continua geométrica, neutra e corporativa para que a empresa possa crescer por software, IA, hardware, pesquisa e experiências interativas sem ficar visualmente presa a uma área.</p></div>
         </div>
         <div className="palette-row neutral-palette">
           <div><i style={{ background: "#07090D" }} /><span>Obsidian</span><code>#07090D</code></div>
@@ -48,8 +48,8 @@ export default function BrandPage() {
         <div className="brand-grid">
           {divisions.map((division) => (
             <article className={`brand-card division-${division.slug}`} key={division.slug} style={accentStyle(division.color)}>
-              <IdentityMark src={division.mark} alt={`Símbolo da Sypher ${division.name}`} size="md" />
-              <div><p className="division-brand">Sypher</p><h3>{division.name}</h3><strong>{division.markName}</strong><p>{division.tone}</p><code>{division.color}</code></div>
+              <IdentityMark src={division.mark} alt={`Símbolo da Zypher ${division.name}`} size="md" />
+              <div><p className="division-brand">Zypher</p><h3>{division.name}</h3><strong>{division.markName}</strong><p>{division.tone}</p><code>{division.color}</code></div>
             </article>
           ))}
         </div>
