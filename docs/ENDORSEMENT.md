@@ -4,12 +4,12 @@
 
 Use the division name when the domain matters:
 
-- Sypher Intelligence
-- Sypher Products
-- Sypher Systems
-- Sypher Engineering
-- Sypher Interactive
-- Sypher Labs
+- Zypher Intelligence
+- Zypher Products
+- Zypher Systems
+- Zypher Engineering
+- Zypher Interactive
+- Zypher Labs
 
 Do not invent new divisions for every project. A new division is justified only when multiple products or a materially different capability cannot fit the existing architecture.
 
@@ -17,20 +17,20 @@ Do not invent new divisions for every project. A new division is justified only 
 
 Preferred technical/portfolio lockup:
 
-`PROJECT — SYPHER DIVISION`
+`PROJECT — ZYPHER DIVISION`
 
 Examples:
 
-- `ILLUME — SYPHER INTELLIGENCE`
-- `NODI — SYPHER PRODUCTS`
-- `SINCROHUB — SYPHER SYSTEMS`
-- `RÉQUIEM — SYPHER INTERACTIVE`
+- `ILLUME — ZYPHER INTELLIGENCE`
+- `NODI — ZYPHER PRODUCTS`
+- `SINCROHUB — ZYPHER SYSTEMS`
+- `RÉQUIEM — ZYPHER INTERACTIVE`
 
 Preferred lightweight marketing lockup:
 
-`PROJECT — BY SYPHER`
+`PROJECT — BY ZYPHER`
 
-The product logo must remain visually dominant. Sypher is an endorsement, not a prefix that replaces the product identity.
+The product logo must remain visually dominant. Zypher is an endorsement, not a prefix that replaces the product identity.
 
 ## Labs graduation
 
@@ -38,7 +38,7 @@ An experiment starts in Labs when its product/customer/category is not yet prove
 
 ## Group
 
-Reserve **Sypher Group** until there is a genuine holding/group reason for it. It is not a prestige suffix.
+Reserve **Zypher Group** until there is a genuine holding/group reason for it. It is not a prestige suffix.
 
 ## Founder / After Hours
 
