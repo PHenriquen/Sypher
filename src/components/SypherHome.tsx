@@ -26,9 +26,9 @@ function Header() {
   return (
     <header className="sy-home-header">
       <div className="sy-home-header-inner">
-        <Link href="/" className="sy-home-brand" aria-label="Página inicial da Sypher">
+        <Link href="/" className="sy-home-brand" aria-label="Página inicial da Zypher">
           <Mark src="/brand/sypher.svg" alt="" />
-          <span><strong>SYPHER</strong><small>Tecnologia · Engenharia · Pesquisa</small></span>
+          <span><strong>ZYPHER</strong><small>Tecnologia · Engenharia · Pesquisa</small></span>
         </Link>
         <nav aria-label="Navegação principal">
           <a href="#divisoes">Divisões</a>
@@ -61,7 +61,7 @@ function Hero() {
         <motion.div initial={{ opacity: 0, scale: .96, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: .75, delay: .08 }} className="sy-hero-symbol">
           <div className="sy-symbol-orbit orbit-a" />
           <div className="sy-symbol-orbit orbit-b" />
-          <div className="sy-symbol-core"><Mark src="/brand/sypher.svg" alt="Símbolo da Sypher" /></div>
+          <div className="sy-symbol-core"><Mark src="/brand/sypher.svg" alt="Símbolo da Zypher" /></div>
           <span className="sy-symbol-label label-a">SOFTWARE</span>
           <span className="sy-symbol-label label-b">INTELLIGENCE</span>
           <span className="sy-symbol-label label-c">ENGINEERING</span>
@@ -69,11 +69,11 @@ function Hero() {
         </motion.div>
       </div>
 
-      <div className="sy-shell sy-brand-strip" aria-label="Identidades da Sypher">
+      <div className="sy-shell sy-brand-strip" aria-label="Identidades da Zypher">
         {divisions.map((division) => (
           <Link href={`/divisions/${division.slug}`} key={division.slug} className={`sy-brand-chip chip-${division.slug}`} style={accent(division.color)}>
-            <Mark src={division.mark} alt={`Logo Sypher ${division.name}`} />
-            <span><small>Sypher</small><strong>{division.name}</strong></span>
+            <Mark src={division.mark} alt={`Logo Zypher ${division.name}`} />
+            <span><small>Zypher</small><strong>{division.name}</strong></span>
           </Link>
         ))}
       </div>
@@ -100,7 +100,7 @@ function Divisions() {
                   <span className="sy-division-scan" />
                 </div>
                 <div className="sy-division-copy">
-                  <small>SYPHER</small>
+                  <small>ZYPHER</small>
                   <h3>{division.name}</h3>
                   <p>{division.role}</p>
                 </div>
@@ -177,7 +177,7 @@ function Closing() {
         <div><p className="sy-kicker"><span /> 04 / Direção</p><h2>Começar por software.<br /><em>Ganhar o direito de expandir.</em></h2></div>
         <div className="sy-closing-actions"><Link href="/founder">Fundador <HiArrowUpRight /></Link><Link href="/after-hours">After Hours <HiArrowUpRight /></Link></div>
       </div>
-      <div className="sy-shell sy-footer-line"><span>SYPHER</span><span>Tecnologia · Engenharia · Pesquisa</span><span>Construída para evoluir.</span></div>
+      <div className="sy-shell sy-footer-line"><span>ZYPHER</span><span>Tecnologia · Engenharia · Pesquisa</span><span>Construída para evoluir.</span></div>
     </section>
   );
 }
