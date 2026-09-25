@@ -1,6 +1,6 @@
 # Site operations
 
-The Sypher website is intentionally data-driven so frequent updates do not require rebuilding the page structure.
+The Zypher website is intentionally data-driven so frequent updates do not require rebuilding the page structure.
 
 ## Where to edit normal content
 
