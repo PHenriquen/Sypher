@@ -418,3 +418,5 @@ html[data-theme="light"] .sy-home .sy-hero h1 em { color:#68428c; }
   .sy-home .sy-project-card { padding:24px; }
   .sy-home .sy-kicker { font-size:10px; }
 }
+
+.sy-home :is(#divisoes,#projetos) { scroll-margin-top:105px; }
