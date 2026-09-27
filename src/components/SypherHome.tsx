@@ -8,10 +8,10 @@ import { company, divisions, projects } from '../brand';
 import { ThemeToggle } from './ThemeToggle';
 
 const reveal = {
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-60px' },
-  transition: { duration: 0.56, ease: [0.2, 0.8, 0.2, 1] as const },
+  transition: { duration: 0.72, ease: [0.2, 0.8, 0.2, 1] as const },
 };
 
 function accent(color: string) {
@@ -48,7 +48,7 @@ function Hero() {
       <div className="sy-hero-grid" aria-hidden="true" />
       <div className="sy-hero-glow" aria-hidden="true" />
       <div className="sy-shell sy-hero-layout">
-        <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }} className="sy-hero-copy">
+        <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: [0.16, 1, 0.3, 1] }} className="sy-hero-copy">
           <p className="sy-kicker"><span /> Empresa independente de tecnologia</p>
           <h1>Tecnologia com<br /><em>visão própria.</em></h1>
           <p className="sy-hero-lede">{company.description} Software é o ponto de partida; IA, sistemas, hardware, jogos e pesquisa fazem parte do mesmo horizonte.</p>
@@ -58,7 +58,7 @@ function Hero() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: .96, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: .75, delay: .08 }} className="sy-hero-symbol">
+        <motion.div initial={{ opacity: 0, scale: .985, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 1.05, delay: .12, ease: [0.16, 1, 0.3, 1] }} className="sy-hero-symbol">
           <div className="sy-symbol-orbit orbit-a" />
           <div className="sy-symbol-orbit orbit-b" />
           <div className="sy-symbol-core"><Mark src="/brand/sypher.svg" alt="Símbolo da Zypher" /></div>
@@ -87,7 +87,7 @@ function Divisions() {
       <div className="sy-shell">
         <motion.div {...reveal} className="sy-section-head">
           <div><p className="sy-kicker"><span /> 01 / Divisões</p><h2>Uma empresa.<br />Seis universos.</h2></div>
-          <p>Cada divisão tem símbolo, cor, linguagem e comportamento próprios. O que une tudo é o padrão de construção da Sypher — não um template repetido seis vezes.</p>
+          <p>Cada divisão tem símbolo, cor, linguagem e comportamento próprios. O que une tudo é o padrão de construção da Zypher — não um template repetido seis vezes.</p>
         </motion.div>
 
         <div className="sy-division-grid">

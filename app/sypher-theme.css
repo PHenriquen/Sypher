@@ -295,3 +295,26 @@ html[data-theme="light"] .founder-boundary p { color:#6d727c; }
 @media (prefers-reduced-motion: reduce) {
   .orbit-a,.orbit-b{animation:none!important}.sy-division-card,.sy-project-card,.sy-btn,.sy-brand-chip{transition:none!important}
 }
+
+
+/* Restrained ambient motion and responsive interaction. */
+.orbit-a { animation:zypher-orbit-a 18s ease-in-out infinite alternate !important; }
+.orbit-b { animation:zypher-orbit-b 22s ease-in-out infinite alternate !important; }
+.sy-symbol-core { transition:transform .8s cubic-bezier(.16,1,.3,1), box-shadow .8s ease; }
+.sy-hero-symbol:hover .sy-symbol-core { transform:translateY(-6px) rotate(-2deg); }
+.sy-division-card,.sy-project-card {
+  transition:transform .6s cubic-bezier(.16,1,.3,1),border-color .45s ease,background-color .45s ease,box-shadow .6s ease !important;
+}
+.sy-division-card:hover,.sy-project-card:hover { transform:translateY(-3px) !important; }
+@keyframes zypher-orbit-a {
+  from { transform:translate(-2%,1%) rotate(-6deg) scale(.98); }
+  to { transform:translate(2%,-1%) rotate(7deg) scale(1.02); }
+}
+@keyframes zypher-orbit-b {
+  from { transform:translate(2%,-1%) rotate(6deg) scale(1.02); }
+  to { transform:translate(-2%,1%) rotate(-7deg) scale(.98); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .orbit-a,.orbit-b { animation:none !important; }
+  .sy-symbol-core,.sy-division-card,.sy-project-card { transition:none !important; }
+}
