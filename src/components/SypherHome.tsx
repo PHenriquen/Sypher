@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
-import { company, divisions, projects } from '../brand';
+import { divisions, projects } from '../brand';
 import { ThemeToggle } from './ThemeToggle';
 
 const reveal = {
@@ -51,7 +51,7 @@ function Hero() {
         <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, ease: [0.16, 1, 0.3, 1] }} className="sy-hero-copy">
           <p className="sy-kicker"><span /> Empresa independente de tecnologia</p>
           <h1>Tecnologia com<br /><em>visão própria.</em></h1>
-          <p className="sy-hero-lede">{company.description} Software é o ponto de partida; IA, sistemas, hardware, jogos e pesquisa fazem parte do mesmo horizonte.</p>
+          <p className="sy-hero-lede">Uma empresa de tecnologia em formação. Software, inteligência e engenharia conectando ideias ao mundo físico.</p>
           <div className="sy-hero-actions">
             <a className="sy-btn primary" href="#projetos">Explorar projetos <HiArrowDownRight /></a>
             <Link className="sy-btn secondary" href="/brand">Sistema de marca</Link>
@@ -87,7 +87,7 @@ function Divisions() {
       <div className="sy-shell">
         <motion.div {...reveal} className="sy-section-head">
           <div><p className="sy-kicker"><span /> 01 / Divisões</p><h2>Uma empresa.<br />Seis universos.</h2></div>
-          <p>Cada divisão tem símbolo, cor, linguagem e comportamento próprios. O que une tudo é o padrão de construção da Zypher — não um template repetido seis vezes.</p>
+          <p>Da pesquisa ao produto, cada divisão explora uma parte do mesmo horizonte tecnológico.</p>
         </motion.div>
 
         <div className="sy-division-grid">
@@ -119,8 +119,8 @@ function Projects() {
     <section className="sy-section sy-projects-section" id="projetos">
       <div className="sy-shell">
         <motion.div {...reveal} className="sy-section-head">
-          <div><p className="sy-kicker"><span /> 02 / Projetos</p><h2>A identidade precisa<br />virar coisa real.</h2></div>
-          <p>Os projetos mantêm voz e símbolo próprios. A divisão funciona como linhagem técnica; o produto continua reconhecível sozinho.</p>
+          <div><p className="sy-kicker"><span /> 02 / Projetos</p><h2>Ideias em<br />construção.</h2></div>
+          <p>Produtos e experimentos em diferentes estágios de desenvolvimento. Explore a proposta de cada projeto.</p>
         </motion.div>
         <div className="sy-project-grid">
           {projects.map((project, index) => {
