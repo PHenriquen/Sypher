@@ -47,7 +47,7 @@ export const founderUrl = founderLinks.portfolio;
 export const divisions: Division[] = [
   {
     slug: "labs",
-    name: "Zypher Labs",
+    name: "Labs",
     focus: "Pesquisa e P&D experimental",
     role: "Incubar o que ainda não está pronto para virar produto.",
     description:
