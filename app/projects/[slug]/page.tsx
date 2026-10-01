@@ -33,13 +33,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="world-hero">
         <div className="world-shell world-hero-grid">
           <div>
-            <div className="world-kicker"><i /><span>Sypher {division.name} / {project.category}</span></div>
+            <div className="world-kicker"><i /><span>Zypher {division.name} / {project.category}</span></div>
             <h1 className="world-title">{project.name}</h1>
             <p className="world-role">{project.tagline}</p>
             <p className="world-description">{project.description}</p>
             <div className="project-actions">
               <a className="project-primary" href={project.href} target="_blank" rel="noreferrer">Abrir repositório ↗</a>
-              <Link className="project-secondary" href={`/divisions/${division.slug}`}>Ver Sypher {division.name}</Link>
+              <Link className="project-secondary" href={`/divisions/${division.slug}`}>Ver Zypher {division.name}</Link>
             </div>
           </div>
 
@@ -56,11 +56,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="world-shell">
           <div className="world-section-head">
             <span className="world-index">01 / Linhagem</span>
-            <div><h2>{project.name} pertence à Sypher {division.name}.</h2><p>O projeto mantém sua própria marca e voz. A divisão funciona como origem técnica, linguagem de apresentação e endosso dentro do ecossistema Sypher.</p></div>
+            <div><h2>{project.name} pertence à Zypher {division.name}.</h2><p>O projeto mantém sua própria marca e voz. A divisão funciona como origem técnica, linguagem de apresentação e endosso dentro do ecossistema Zypher.</p></div>
           </div>
           <div className="world-identity-grid">
-            <article className="world-identity-card"><small>Status</small><strong>{project.status}</strong><p>Estado atual do desenvolvimento apresentado publicamente pela Sypher.</p></article>
-            <article className="world-identity-card"><small>Categoria</small><strong>{project.category}</strong><p>Divisão: Sypher {division.name}</p><div className="world-swatch" /></article>
+            <article className="world-identity-card"><small>Status</small><strong>{project.status}</strong><p>Estado atual do desenvolvimento apresentado publicamente pela Zypher.</p></article>
+            <article className="world-identity-card"><small>Categoria</small><strong>{project.category}</strong><p>Divisão: Zypher {division.name}</p><div className="world-swatch" /></article>
           </div>
         </div>
       </section>
@@ -69,10 +69,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="world-shell">
           <div className="world-section-head">
             <span className="world-index">02 / Direção</span>
-            <div><h2>Produto próprio, contexto próprio.</h2><p>A Sypher não transforma todos os projetos em clones da marca-mãe. Cada produto pode construir uma identidade mais expressiva desde que sua relação com a divisão permaneça clara.</p></div>
+            <div><h2>Produto próprio, contexto próprio.</h2><p>A Zypher não transforma todos os projetos em clones da marca-mãe. Cada produto pode construir uma identidade mais expressiva desde que sua relação com a divisão permaneça clara.</p></div>
           </div>
           <div className="world-principles">
-            <article className="world-principle"><span>01</span><h3>Identidade autônoma</h3><p>O projeto precisa continuar reconhecível mesmo quando o nome Sypher não aparece ao lado.</p></article>
+            <article className="world-principle"><span>01</span><h3>Identidade autônoma</h3><p>O projeto precisa continuar reconhecível mesmo quando o nome Zypher não aparece ao lado.</p></article>
             <article className="world-principle"><span>02</span><h3>Linhagem técnica</h3><p>A divisão comunica a disciplina, o padrão de construção e o tipo de problema que o projeto explora.</p></article>
             <article className="world-principle"><span>03</span><h3>Evolução pública</h3><p>Status e escopo devem refletir o estágio real do projeto, sem fingir maturidade que ainda não existe.</p></article>
           </div>
