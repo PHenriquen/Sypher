@@ -1,8 +1,8 @@
 # Zypher
 
-Official website and brand hub for the **working Zypher parent identity**.
+Official website and brand hub for the **Zypher ecosystem**.
 
-The project is being built as a durable company architecture: one parent brand, clear divisions and individual products that keep their own identities. The division system is intentionally designed so it can survive a future parent-name change if legal/market clearance requires one.
+Zypher is the parent identity connecting independent projects across software, artificial intelligence, physical computing, engineering and interactive experiences. Each project keeps its own personality while sharing one broader technical and visual system.
 
 ## Brand architecture
 
@@ -17,12 +17,12 @@ The project is being built as a durable company architecture: one parent brand, 
 
 ## Current lineage
 
-- Illume → Intelligence
-- Nodi → Products
-- SincroHub → Systems
-- Manopla Inteligente → Engineering
-- Réquiem → Interactive
-- Uncommitted experiments → Labs
+- **ILLume** → Intelligence
+- **Nodi** → Products
+- **SincroHub** → Systems
+- **Manopla Inteligente / DEXTR** → Engineering
+- **Ecos do Tempo** → Interactive
+- Uncommitted experiments → Zypher Labs
 
 ## Identity system
 
@@ -33,7 +33,7 @@ The repository includes working SVG marks, color tokens and usage rules:
 - [`brand/tokens.json`](brand/tokens.json)
 - [`public/brand`](public/brand)
 
-The vectors are effect-free core marks; glow and motion belong to presentation layers. Illume's approved reactor/core art remains the intended master identity and the SVG here is a web companion reconstruction.
+The vectors are effect-free core marks; glow and motion belong to presentation layers. ILLume's reactor/core art remains the intended master identity and the SVG here is a web companion reconstruction.
 
 ## Stack
 
@@ -59,5 +59,3 @@ npm run build
 ## Deployment
 
 Production workflow: **GitHub → Vercel**. Keep Vercel on the Next.js preset and leave Output Directory on its framework default.
-
-> Status: brand system v1 is being developed on a review branch before it becomes the live identity.
