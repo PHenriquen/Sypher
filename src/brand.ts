@@ -47,7 +47,7 @@ export const founderUrl = founderLinks.portfolio;
 export const divisions: Division[] = [
   {
     slug: "labs",
-    name: "Labs",
+    name: "Zypher Labs",
     focus: "Pesquisa e P&D experimental",
     role: "Incubar o que ainda não está pronto para virar produto.",
     description:
@@ -140,14 +140,14 @@ export const divisions: Division[] = [
 export const projects: Project[] = [
   {
     slug: "illume",
-    name: "Illume",
+    name: "ILLume",
     divisionSlug: "intelligence",
     category: "Assistente de IA",
     tagline: "Uma inteligência local que vive com o computador em vez de ficar presa a uma aba do navegador.",
     description:
       "Assistente local-first para Windows explorando voz, contexto, documentos, automação nativa controlada, permissões e modelos locais.",
     status: "Em desenvolvimento",
-    href: "https://github.com/PHenriquen/Noa",
+    href: "https://github.com/PHenriquen/Illume",
     mark: "/brand/projects/illume.svg",
     accent: "#00D6FF",
   },
@@ -191,15 +191,15 @@ export const projects: Project[] = [
     accent: "#E99A55",
   },
   {
-    slug: "requiem",
-    name: "Réquiem",
+    slug: "ecos-do-tempo",
+    name: "Ecos do Tempo",
     divisionSlug: "interactive",
     category: "Jogo",
-    tagline: "Ritmo, memória e combate dentro de um mundo dark fantasy silencioso.",
+    tagline: "Uma experiência 2D pequena, atmosférica e feita para chegar ao fim.",
     description:
-      "Roguelite de ação rítmica em pré-produção, construído em torno de cadência, solidão, narrativa em camadas e um loop de combate rejogável de alta habilidade.",
+      "Primeiro jogo autoral do ecossistema, em pré-produção, com escopo deliberadamente compacto, foco em atmosfera, gameplay essencial e narrativa ambiental opcional.",
     status: "Pré-produção",
-    href: "https://github.com/PHenriquen/Game-R-quiem",
+    href: "https://github.com/PHenriquen/Noah",
     mark: "/brand/projects/requiem.svg",
     accent: "#C64659",
   },
