@@ -84,7 +84,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
       <section className="world-hero">
         <div className="world-shell world-hero-grid">
           <div>
-            <div className="world-kicker"><i /><span>Sypher / Divisão</span></div>
+            <div className="world-kicker"><i /><span>Zypher / Divisão</span></div>
             <h1 className="world-title">{division.name}</h1>
             <p className="world-role">{division.role}</p>
             <p className="world-description">{division.description}</p>
@@ -106,7 +106,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
         <div className="world-shell">
           <div className="world-section-head">
             <span className="world-index">01 / Como pensa</span>
-            <div><h2>Um domínio com regras próprias.</h2><p>A divisão não é apenas uma cor dentro da Sypher. Ela define como esse tipo de trabalho deve pensar, se comportar e ser apresentado.</p></div>
+            <div><h2>Um domínio com regras próprias.</h2><p>A divisão não é apenas uma cor dentro da Zypher. Ela define como esse tipo de trabalho deve pensar, se comportar e ser apresentado.</p></div>
           </div>
           <div className="world-principles">
             {narrative.principles.map(([title, description], index) => (
@@ -128,7 +128,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ slug:
           </div>
           <div className="world-identity-grid">
             <article className="world-identity-card"><small>Assinatura visual</small><strong>{division.color}</strong><div className="world-swatch" /></article>
-            <article className="world-identity-card"><small>Motivo</small><strong>{division.motif}</strong><p>A geometria é o elo com a família Sypher; a execução visual é específica desta divisão.</p></article>
+            <article className="world-identity-card"><small>Motivo</small><strong>{division.motif}</strong><p>A geometria é o elo com a família Zypher; a execução visual é específica desta divisão.</p></article>
           </div>
         </div>
       </section>
