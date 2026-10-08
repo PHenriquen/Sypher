@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { HiArrowDownRight, HiArrowUpRight } from 'react-icons/hi2';
 import { divisions, projects } from '../brand';
 import { ThemeToggle } from './ThemeToggle';
+import { SentientSphere } from './SentientSphere';
 
 const reveal = {
   initial: { opacity: 0, y: 16 },
@@ -61,7 +62,7 @@ function Hero() {
         <motion.div initial={{ opacity: 0, scale: .985, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 1.05, delay: .12, ease: [0.16, 1, 0.3, 1] }} className="sy-hero-symbol">
           <div className="sy-symbol-orbit orbit-a" />
           <div className="sy-symbol-orbit orbit-b" />
-          <div className="sy-symbol-core"><Mark src="/brand/sypher.svg" alt="Símbolo da Zypher" /></div>
+          <div className="sy-portfolio-sphere" aria-hidden="true"><SentientSphere /></div>
           <span className="sy-symbol-label label-a">SOFTWARE</span>
           <span className="sy-symbol-label label-b">INTELLIGENCE</span>
           <span className="sy-symbol-label label-c">ENGINEERING</span>
